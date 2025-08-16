@@ -105,7 +105,7 @@ export default function Projects() {
       projectType: 'web app',
       year: '2025',
       image: '/projects/portfolio.png',
-      demo: 'https://madeeshask.dev',
+      demo: 'https://madeeshask.vercel.app/',
       linkedin: 'https://linkedin.com',
     },
   ]
