@@ -12,7 +12,7 @@ export default function Skills() {
     triggerOnce: true,
   })
 
-  const [activeCategory, setActiveCategory] = useState('languages')
+  const [activeCategory, setActiveCategory] = useState('webdev')
 
   // Technology icon component
   const TechIcon = ({ name, imagePath, className = "" }: { name: string; imagePath: string; className?: string }) => {

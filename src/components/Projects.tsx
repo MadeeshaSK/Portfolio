@@ -4,7 +4,7 @@
 
 import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
-import { ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ExternalLink, Github, Linkedin } from 'lucide-react'
 
 export default function Projects() {
   const { ref, inView } = useInView({
@@ -13,81 +13,87 @@ export default function Projects() {
   })
 
   const [activeFilter, setActiveFilter] = useState('all')
-  const [currentProject, setCurrentProject] = useState(0)
+  const [showAllProjects, setShowAllProjects] = useState(false)
 
   const filters = [
     { id: 'all', label: 'All Projects' },
-    { id: 'web', label: 'Web Apps' },
-    { id: 'mobile', label: 'Mobile' },
-    { id: 'design', label: 'UI/UX' },
+    { id: 'individual', label: 'Individual Projects' },
+    { id: 'team', label: 'Team Projects' },
   ]
 
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, product management, and secure payments.',
-      image: '/api/placeholder/600/400',
-      tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      category: 'web',
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      featured: true,
+      title: 'MSGLYAPI – SAAS PLATFORM',
+      description: 'This SaaS platform offers SMS, email, and OTP verification services accessible via API keys or through an intuitive web interface. Users get a dashboard to manage their usage and view analytics, while admins have a full control panel to oversee platform operations with role-based access.',
+      tags: ['Node.js', 'Firebase', 'Python', 'Next.js', 'Tailwind CSS', 'Docker', 'Redis'],
+      category: 'individual',
+      projectType: 'web app',
+      year: '2025',
+      image: '/projects/msgly-api.png',
+      github: 'https://github.com/MadeeshaSK/msgsend',
+      demo: 'https://msgly-api.vercel.app/',
+      linkedin: 'https://www.linkedin.com/posts/madeesha-karunarathna_nodejs-firebase-saas-activity-7358515962419056641-3cjA?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJe91gBXQEAH54t2W8kIqsJXbgXVT-GEBM',
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: '/api/placeholder/600/400',
-      tags: ['Next.js', 'TypeScript', 'Prisma', 'Socket.io'],
-      category: 'web',
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      featured: true,
+      title: 'POINTEDGE - POS WEBSITE',
+      description: 'This project is a Point of Sale (POS) website for a supermarket. My responsibilities include implementing discount and loyalty management features to enhance customer engagement and streamline promotional offers. Second-year software development group project in collaboration with Taycantech Company.',
+      tags: ['React.js', 'Chakra UI', 'Spring Boot', 'MySQL'],
+      category: 'team',
+      projectType: 'web app',
+      year: '2024/2025',
+      image: '/projects/point-edge.png',
+      linkedin: 'https://www.linkedin.com/posts/madeesha-karunarathna_softwareengineering-possystem-springboot-activity-7360944662422962176-C5OU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJe91gBXQEAH54t2W8kIqsJXbgXVT-GEBM',
     },
     {
       id: 3,
-      title: 'Mobile Banking App',
-      description: 'A secure mobile banking application with biometric authentication, transaction history, and real-time notifications.',
-      image: '/api/placeholder/600/400',
-      tags: ['React Native', 'Firebase', 'Redux'],
-      category: 'mobile',
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      featured: false,
+      title: 'SECOND CHANCE - MOBILE APPLICATION',
+      description: 'This is a mobile application for posting lost and found items and creating community posts with chat features. It includes an admin app to manage posts, users, and reports efficiently. Individual project created to meet personal and others\' needs.',
+      tags: ['Flutter', 'Flutter BloC', 'Node.js', 'Firebase'],
+      category: 'individual',
+      projectType: 'mobile',
+      year: '2025',
+      image: '/projects/second-chance.jpg',
+      status: 'ONGOING',
     },
     {
       id: 4,
-      title: 'Design System',
-      description: 'A comprehensive design system with reusable components, design tokens, and documentation for consistent user experiences.',
-      image: '/api/placeholder/600/400',
-      tags: ['Figma', 'Storybook', 'Design Tokens'],
-      category: 'design',
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      featured: false,
+      title: 'BUDGETLOG - DESKTOP APPLICATION',
+      description: 'This is a personal budget management desktop app with authentication, an embedded database, logging, and tracking of earnings and spending. It also lets users customize templates. Individual project created to meet personal and others\' needs.',
+      tags: ['Java Swing', 'SQLite'],
+      category: 'individual',
+      projectType: 'desktop',
+      year: '2024',
+      image: '/projects/budget-log.png',
+      github: 'https://github.com/MadeeshaSK/BudgetLog',
+      demo: 'https://github.com/MadeeshaSK/BudgetLog/releases/download/BudgetLog_v1/BudgetLog_v1_installer.zip',
+      linkedin: 'https://www.linkedin.com/posts/madeesha-karunarathna_javadevelopment-softwaredevelopment-maven-activity-7283045338481864704-Hqdt?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJe91gBXQEAH54t2W8kIqsJXbgXVT-GEBM',
     },
     {
       id: 5,
-      title: 'Weather Dashboard',
-      description: 'A responsive weather dashboard with geolocation, forecasts, and interactive maps using modern web technologies.',
-      image: '/api/placeholder/600/400',
-      tags: ['Vue.js', 'Chart.js', 'OpenWeather API'],
-      category: 'web',
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      featured: false,
+      title: 'GREEN CARE ASSIST - HARDWARE PROJECT',
+      description: 'Condition Controlled Ornamental Plant Box — A microcontroller project that monitors and controls temperature and humidity to create ideal conditions for ornamental plants. My role is to manage the temperature and humidity control system. First-year microcontroller-based hardware group project.',
+      tags: ['C++', 'Arduino', 'ESP32'],
+      category: 'team',
+      projectType: 'iot',
+      year: '2023/2024',
+      image: '/projects/green-care-assist.jpg',
+      github: 'https://github.com/MadeeshaSK/Green-Care-Assist',
+      linkedin: 'https://www.linkedin.com/posts/madeesha-karunarathna_arduino-esp32-uom-activity-7245796296698011650-Ax2K?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJe91gBXQEAH54t2W8kIqsJXbgXVT-GEBM',
     },
     {
       id: 6,
-      title: 'Social Media App',
-      description: 'A full-featured social media application with posts, comments, likes, and real-time messaging capabilities.',
-      image: '/api/placeholder/600/400',
-      tags: ['React', 'GraphQL', 'Apollo', 'AWS'],
-      category: 'web',
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      featured: true,
+      title: 'PERSONAL PORTFOLIO WEBSITE',
+      description: 'A fully responsive and modern personal portfolio website showcasing my projects and skills. Features include smooth navigation, project galleries, and a contact form with all the modern web technologies.',
+      tags: ['Next.js', 'Tailwind CSS', 'Vercel'],
+      category: 'individual',
+      projectType: 'web app',
+      year: '2025',
+      image: '/projects/portfolio.png',
+      github: 'https://github.com/MadeeshaSK/Portfolio',
+      demo: 'https://madeeshask.dev',
+      linkedin: 'https://linkedin.com',
     },
   ]
 
@@ -95,12 +101,21 @@ export default function Projects() {
     ? projects 
     : projects.filter(project => project.category === activeFilter)
 
-  const nextProject = () => {
-    setCurrentProject((prev) => (prev + 1) % filteredProjects.length)
-  }
+  const displayedProjects = showAllProjects ? filteredProjects : filteredProjects.slice(0, 6)
 
-  const prevProject = () => {
-    setCurrentProject((prev) => (prev - 1 + filteredProjects.length) % filteredProjects.length)
+  const getProjectTypeColor = (type: string) => {
+    switch (type) {
+      case 'web app':
+        return 'bg-blue-500/20 text-blue-300 border-blue-500/30'
+      case 'mobile':
+        return 'bg-green-500/20 text-green-300 border-green-500/30'
+      case 'desktop':
+        return 'bg-purple-500/20 text-purple-300 border-purple-500/30'
+      case 'iot':
+        return 'bg-orange-500/20 text-orange-300 border-orange-500/30'
+      default:
+        return 'bg-gray-500/20 text-gray-300 border-gray-500/30'
+    }
   }
 
   return (
@@ -109,11 +124,11 @@ export default function Projects() {
         {/* Header */}
         <div ref={ref} className="text-center mb-16">
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            Featured <span className="gradient-text">Projects</span>
+            My <span className="gradient-text">Projects</span>
           </h2>
           <div className={`w-20 h-1 bg-gradient-to-r from-primary-500 to-secondary-600 rounded-full mx-auto mb-8 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} />
           <p className={`text-lg text-text-secondary max-w-2xl mx-auto ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
-            Here are some of my recent projects that showcase my skills and experience
+            Here are some of my projects that showcase my skills and experience across different technologies and platforms
           </p>
         </div>
 
@@ -124,7 +139,7 @@ export default function Projects() {
               key={filter.id}
               onClick={() => {
                 setActiveFilter(filter.id)
-                setCurrentProject(0)
+                setShowAllProjects(false)
               }}
               className={`px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                 activeFilter === filter.id
@@ -137,161 +152,99 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Featured Project Carousel */}
-        {filteredProjects.length > 0 && (
-          <div className={`mb-16 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '600ms' }}>
-            <div className="relative max-w-4xl mx-auto">
-              <div className="card overflow-hidden">
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
-                  {/* Project Image */}
-                  <div className="relative group">
-                    <div className="aspect-video bg-gradient-to-br from-dark-800 to-dark-900 rounded-lg overflow-hidden">
-                      <div className="w-full h-full bg-gradient-to-br from-primary-500/20 to-secondary-500/20 flex items-center justify-center">
-                        <span className="text-text-muted text-lg">Project Screenshot</span>
-                      </div>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-
-                  {/* Project Info */}
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-2xl font-bold mb-3 text-text-primary">
-                        {filteredProjects[currentProject].title}
-                      </h3>
-                      <p className="text-text-secondary leading-relaxed">
-                        {filteredProjects[currentProject].description}
-                      </p>
-                    </div>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2">
-                      {filteredProjects[currentProject].tags.map((tag) => (
-                        <span 
-                          key={tag}
-                          className="px-3 py-1 bg-primary-500/20 text-primary-300 text-sm rounded-full border border-primary-500/30"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Links */}
-                    <div className="flex gap-4">
-                      <a 
-                        href={filteredProjects[currentProject].github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-secondary group"
-                      >
-                        <Github className="w-4 h-4" />
-                        Code
-                      </a>
-                      <a 
-                        href={filteredProjects[currentProject].demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-primary group"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Live Demo
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Navigation Buttons */}
-              {filteredProjects.length > 1 && (
-                <>
-                  <button
-                    onClick={prevProject}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-dark-900/80 hover:bg-dark-800 rounded-full transition-colors duration-300 backdrop-blur-sm text-text-primary hover:text-primary-400"
-                    aria-label="Previous project"
-                  >
-                    <ChevronLeft className="w-6 h-6" />
-                  </button>
-                  <button
-                    onClick={nextProject}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-dark-900/80 hover:bg-dark-800 rounded-full transition-colors duration-300 backdrop-blur-sm text-text-primary hover:text-primary-400"
-                    aria-label="Next project"
-                  >
-                    <ChevronRight className="w-6 h-6" />
-                  </button>
-                </>
-              )}
-
-              {/* Dots Indicator */}
-              {filteredProjects.length > 1 && (
-                <div className="flex justify-center mt-6 space-x-2">
-                  {filteredProjects.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentProject(index)}
-                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                        index === currentProject 
-                          ? 'bg-primary-500' 
-                          : 'bg-text-muted hover:bg-text-secondary'
-                      }`}
-                      aria-label={`Go to project ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.slice(0, 6).map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <div 
               key={project.id}
               className={`card group hover:scale-105 cursor-pointer ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}
-              style={{ animationDelay: `${index * 100 + 800}ms` }}
+              style={{ animationDelay: `${index * 100 + 600}ms` }}
             >
-              {/* Project Image */}
+              {/* Project Header */}
               <div className="aspect-video bg-gradient-to-br from-dark-800 to-dark-900 rounded-lg mb-4 overflow-hidden relative">
-                <div className="w-full h-full bg-gradient-to-br from-primary-500/10 to-secondary-500/10 flex items-center justify-center">
-                  <span className="text-text-muted text-sm">Project Image</span>
-                </div>
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                  <a 
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-dark-900 rounded-full hover:bg-dark-800 transition-colors duration-300 text-text-primary hover:text-text-secondary"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <Github className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-primary-600 rounded-full hover:bg-primary-700 transition-colors duration-300 text-white"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                  </a>
-                </div>
-                {project.featured && (
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-primary-500 to-secondary-600 text-white text-xs px-2 py-1 rounded-full">
-                    Featured
+                {project.image ? (
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-primary-500/10 to-secondary-500/10 flex items-center justify-center p-6">
+                    <div className="text-center">
+                      <h4 className="text-text-primary font-semibold text-lg mb-2">{project.title}</h4>
+                      <p className="text-text-muted text-sm">({project.year})</p>
+                    </div>
                   </div>
                 )}
+                
+                {/* Conditional Links Overlay */}
+                {(project.github || project.demo || project.linkedin) && (
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                    {project.github && (
+                      <a 
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 bg-dark-900 rounded-full hover:bg-dark-800 transition-colors duration-300 text-text-primary hover:text-text-secondary"
+                        onClick={(e) => e.stopPropagation()}
+                        title="View Code"
+                      >
+                        <Github className="w-5 h-5" />
+                      </a>
+                    )}
+                    {project.demo && (
+                      <a 
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 bg-primary-600 rounded-full hover:bg-primary-700 transition-colors duration-300 text-white"
+                        onClick={(e) => e.stopPropagation()}
+                        title="Live Demo"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    )}
+                    {project.linkedin && (
+                      <a 
+                        href={project.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 bg-blue-600 rounded-full hover:bg-blue-700 transition-colors duration-300 text-white"
+                        onClick={(e) => e.stopPropagation()}
+                        title="More Details"
+                      >
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                    )}
+                  </div>
+                )}
+                
+                {/* Project Type and Status Badges */}
+                <div className="absolute top-4 left-4 flex flex-col gap-2">
+                  <span className={`px-2 py-1 text-xs rounded-full border ${getProjectTypeColor(project.projectType)}`}>
+                    {project.projectType.toUpperCase()}
+                  </span>
+                  {project.status && (
+                    <span className="px-2 py-1 bg-yellow-500/20 text-yellow-300 text-xs rounded-full border border-yellow-500/30">
+                      {project.status}
+                    </span>
+                  )}
+                </div>
               </div>
 
               {/* Project Info */}
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-text-primary group-hover:text-primary-400 transition-colors duration-300">
-                  {project.title}
-                </h3>
-                <p className="text-text-muted text-sm leading-relaxed">
-                  {project.description.slice(0, 100)}...
-                </p>
+                <div>
+                  <h3 className="text-xl font-semibold text-text-primary group-hover:text-primary-400 transition-colors duration-300 mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-text-muted text-sm leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+                
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.slice(0, 3).map((tag) => (
+                  {project.tags.map((tag) => (
                     <span 
                       key={tag}
                       className="px-2 py-1 bg-dark-800 text-text-secondary text-xs rounded"
@@ -300,21 +253,45 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
+
+                {/* Category Badge */}
+                <div className="pt-2">
+                  <span className={`inline-block px-3 py-1 text-xs rounded-full ${
+                    project.category === 'individual' 
+                      ? 'bg-primary-500/20 text-primary-300 border border-primary-500/30'
+                      : 'bg-secondary-500/20 text-secondary-300 border border-secondary-500/30'
+                  }`}>
+                    {project.category === 'individual' ? 'Individual Project' : 'Team Project'}
+                  </span>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* View All Projects */}
-        <div className={`text-center mt-12 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '1200ms' }}>
+        {/* Show More/Less Button */}
+        {filteredProjects.length > 6 && (
+          <div className={`text-center mt-12 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '1000ms' }}>
+            <button 
+              onClick={() => setShowAllProjects(!showAllProjects)}
+              className="btn btn-secondary group"
+            >
+              {showAllProjects ? 'Show Less' : `View All ${filteredProjects.length} Projects`}
+              <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </button>
+          </div>
+        )}
+
+        {/* GitHub Link */}
+        <div className={`text-center mt-8 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '1200ms' }}>
           <a 
-            href="https://github.com"
+            href="https://github.com/MadeeshaSK"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-secondary group"
+            className="text-text-muted hover:text-primary-400 transition-colors duration-300 text-sm flex items-center justify-center gap-2"
           >
-            View All Projects
-            <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            <Github className="w-4 h-4" />
+            View more projects on GitHub
           </a>
         </div>
       </div>
