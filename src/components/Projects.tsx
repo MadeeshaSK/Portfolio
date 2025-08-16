@@ -104,15 +104,15 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects" className="section-padding bg-gradient-to-b from-gray-900/20 to-transparent">
+    <section id="projects" className="section-padding bg-gradient-to-b from-dark-900/20 to-transparent">
       <div className="container-custom">
         {/* Header */}
         <div ref={ref} className="text-center mb-16">
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <div className={`w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto mb-8 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} />
-          <p className={`text-lg text-gray-300 max-w-2xl mx-auto ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
+          <div className={`w-20 h-1 bg-gradient-to-r from-primary-500 to-secondary-600 rounded-full mx-auto mb-8 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} />
+          <p className={`text-lg text-text-secondary max-w-2xl mx-auto ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
             Here are some of my recent projects that showcase my skills and experience
           </p>
         </div>
@@ -128,8 +128,8 @@ export default function Projects() {
               }}
               className={`px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                 activeFilter === filter.id
-                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25 filter-btn-active'
-                  : 'bg-gray-800/50 text-gray-400 hover:text-white hover:bg-gray-700/50'
+                  ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/25 filter-btn-active'
+                  : 'bg-dark-800/50 text-text-muted hover:text-text-primary hover:bg-dark-700/50'
               }`}
             >
               {filter.label}
@@ -145,9 +145,9 @@ export default function Projects() {
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
                   {/* Project Image */}
                   <div className="relative group">
-                    <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden">
-                      <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
-                        <span className="text-gray-400 text-lg">Project Screenshot</span>
+                    <div className="aspect-video bg-gradient-to-br from-dark-800 to-dark-900 rounded-lg overflow-hidden">
+                      <div className="w-full h-full bg-gradient-to-br from-primary-500/20 to-secondary-500/20 flex items-center justify-center">
+                        <span className="text-text-muted text-lg">Project Screenshot</span>
                       </div>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -156,10 +156,10 @@ export default function Projects() {
                   {/* Project Info */}
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-2xl font-bold mb-3 text-white">
+                      <h3 className="text-2xl font-bold mb-3 text-text-primary">
                         {filteredProjects[currentProject].title}
                       </h3>
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className="text-text-secondary leading-relaxed">
                         {filteredProjects[currentProject].description}
                       </p>
                     </div>
@@ -169,7 +169,7 @@ export default function Projects() {
                       {filteredProjects[currentProject].tags.map((tag) => (
                         <span 
                           key={tag}
-                          className="px-3 py-1 bg-blue-500/20 text-blue-300 text-sm rounded-full border border-blue-500/30"
+                          className="px-3 py-1 bg-primary-500/20 text-primary-300 text-sm rounded-full border border-primary-500/30"
                         >
                           {tag}
                         </span>
@@ -206,14 +206,14 @@ export default function Projects() {
                 <>
                   <button
                     onClick={prevProject}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-gray-900/80 hover:bg-gray-800 rounded-full transition-colors duration-300 backdrop-blur-sm"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-dark-900/80 hover:bg-dark-800 rounded-full transition-colors duration-300 backdrop-blur-sm text-text-primary hover:text-primary-400"
                     aria-label="Previous project"
                   >
                     <ChevronLeft className="w-6 h-6" />
                   </button>
                   <button
                     onClick={nextProject}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-gray-900/80 hover:bg-gray-800 rounded-full transition-colors duration-300 backdrop-blur-sm"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-dark-900/80 hover:bg-dark-800 rounded-full transition-colors duration-300 backdrop-blur-sm text-text-primary hover:text-primary-400"
                     aria-label="Next project"
                   >
                     <ChevronRight className="w-6 h-6" />
@@ -230,8 +230,8 @@ export default function Projects() {
                       onClick={() => setCurrentProject(index)}
                       className={`w-3 h-3 rounded-full transition-colors duration-300 ${
                         index === currentProject 
-                          ? 'bg-blue-500' 
-                          : 'bg-gray-600 hover:bg-gray-500'
+                          ? 'bg-primary-500' 
+                          : 'bg-text-muted hover:bg-text-secondary'
                       }`}
                       aria-label={`Go to project ${index + 1}`}
                     />
@@ -251,16 +251,16 @@ export default function Projects() {
               style={{ animationDelay: `${index * 100 + 800}ms` }}
             >
               {/* Project Image */}
-              <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg mb-4 overflow-hidden relative">
-                <div className="w-full h-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Project Image</span>
+              <div className="aspect-video bg-gradient-to-br from-dark-800 to-dark-900 rounded-lg mb-4 overflow-hidden relative">
+                <div className="w-full h-full bg-gradient-to-br from-primary-500/10 to-secondary-500/10 flex items-center justify-center">
+                  <span className="text-text-muted text-sm">Project Image</span>
                 </div>
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                   <a 
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-gray-900 rounded-full hover:bg-gray-800 transition-colors duration-300"
+                    className="p-2 bg-dark-900 rounded-full hover:bg-dark-800 transition-colors duration-300 text-text-primary hover:text-text-secondary"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <Github className="w-5 h-5" />
@@ -269,14 +269,14 @@ export default function Projects() {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-blue-600 rounded-full hover:bg-blue-700 transition-colors duration-300"
+                    className="p-2 bg-primary-600 rounded-full hover:bg-primary-700 transition-colors duration-300 text-white"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <ExternalLink className="w-5 h-5" />
                   </a>
                 </div>
                 {project.featured && (
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs px-2 py-1 rounded-full">
+                  <div className="absolute top-4 right-4 bg-gradient-to-r from-primary-500 to-secondary-600 text-white text-xs px-2 py-1 rounded-full">
                     Featured
                   </div>
                 )}
@@ -284,17 +284,17 @@ export default function Projects() {
 
               {/* Project Info */}
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-text-primary group-hover:text-primary-400 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-text-muted text-sm leading-relaxed">
                   {project.description.slice(0, 100)}...
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.slice(0, 3).map((tag) => (
                     <span 
                       key={tag}
-                      className="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded"
+                      className="px-2 py-1 bg-dark-800 text-text-secondary text-xs rounded"
                     >
                       {tag}
                     </span>

@@ -1,5 +1,4 @@
 /* tailwind.config.js */
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -10,30 +9,46 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Primary - Emerald Green
         primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
+          50: '#ecfdf5',
+          100: '#d1fae5',
+          200: '#a7f3d0',
+          300: '#6ee7b7',
+          400: '#34d399',
+          500: '#10b981', // Main primary
+          600: '#059669', // Primary dark
+          700: '#047857',
+          800: '#065f46',
+          900: '#064e3b',
         },
+        // Secondary - Teal
         secondary: {
-          50: '#f5f3ff',
-          100: '#ede9fe',
-          200: '#ddd6fe',
-          300: '#c4b5fd',
-          400: '#a78bfa',
-          500: '#8b5cf6',
-          600: '#7c3aed',
-          700: '#6d28d9',
-          800: '#5b21b6',
-          900: '#4c1d95',
+          50: '#f0fdfa',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#06d6a0', // Main secondary
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
         },
+        // Accent - Lime
+        accent: {
+          50: '#f7fee7',
+          100: '#ecfccb',
+          200: '#d9f99d',
+          300: '#bef264',
+          400: '#a3e635',
+          500: '#84cc16', // Main accent
+          600: '#65a30d',
+          700: '#4d7c0f',
+          800: '#3f6212',
+          900: '#365314',
+        },
+        // Dark theme backgrounds
         dark: {
           50: '#f8fafc',
           100: '#f1f5f9',
@@ -43,9 +58,9 @@ module.exports = {
           500: '#64748b',
           600: '#475569',
           700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617',
+          800: '#1f2937', // bg-secondary
+          900: '#374151', // bg-card
+          950: '#0f1419', // bg-primary
         }
       },
       fontFamily: {
@@ -99,8 +114,8 @@ module.exports = {
           '50%': { opacity: '0.5' },
         },
         pulseGlow: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.4)' },
-          '50%': { boxShadow: '0 0 40px rgba(59, 130, 246, 0.8)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(16, 185, 129, 0.4)' },
+          '50%': { boxShadow: '0 0 40px rgba(16, 185, 129, 0.8)' },
         },
         typing: {
           from: { width: '0' },
@@ -108,7 +123,7 @@ module.exports = {
         },
         'blink-caret': {
           'from, to': { 'border-color': 'transparent' },
-          '50%': { 'border-color': '#3b82f6' },
+          '50%': { 'border-color': '#10b981' },
         },
       },
       backgroundImage: {

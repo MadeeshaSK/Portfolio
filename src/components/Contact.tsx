@@ -48,19 +48,19 @@ export default function Contact() {
       icon: Github,
       label: 'GitHub',
       href: 'https://github.com',
-      color: 'hover:text-gray-300',
+      color: 'hover:text-text-secondary',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
       href: 'https://linkedin.com',
-      color: 'hover:text-blue-400',
+      color: 'hover:text-secondary-400',
     },
     {
       icon: Twitter,
       label: 'Twitter',
       href: 'https://twitter.com',
-      color: 'hover:text-blue-400',
+      color: 'hover:text-secondary-400',
     },
   ]
 
@@ -85,15 +85,15 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-padding bg-gradient-to-b from-gray-900/20 to-dark-950">
+    <section id="contact" className="section-padding bg-gradient-to-b from-dark-900/20 to-dark-950">
       <div className="container-custom">
         {/* Header */}
         <div ref={ref} className="text-center mb-16">
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
             Get In <span className="gradient-text">Touch</span>
           </h2>
-          <div className={`w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto mb-8 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} />
-          <p className={`text-lg text-gray-300 max-w-2xl mx-auto ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
+          <div className={`w-20 h-1 bg-gradient-to-r from-primary-500 to-secondary-600 rounded-full mx-auto mb-8 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} />
+          <p className={`text-lg text-text-secondary max-w-2xl mx-auto ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
             Have a project in mind or want to collaborate? I'd love to hear from you. 
             Let's create something amazing together!
           </p>
@@ -103,8 +103,8 @@ export default function Contact() {
           {/* Contact Information */}
           <div className={`space-y-8 ${inView ? 'animate-fade-in-left' : 'opacity-0'}`} style={{ animationDelay: '400ms' }}>
             <div>
-              <h3 className="text-2xl font-semibold mb-6 text-white">Let's Connect</h3>
-              <p className="text-gray-300 leading-relaxed mb-8">
+              <h3 className="text-2xl font-semibold mb-6 text-text-primary">Let's Connect</h3>
+              <p className="text-text-secondary leading-relaxed mb-8">
                 I'm always open to discussing new opportunities, creative projects, 
                 or just having a friendly chat about technology and design.
               </p>
@@ -125,13 +125,13 @@ export default function Contact() {
                   >
                     <div className="flex items-center space-x-4">
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <IconComponent className="w-6 h-6 text-white" />
                         </div>
                       </div>
                       <div>
-                        <h4 className="text-lg font-medium text-white mb-1">{info.title}</h4>
-                        <p className="text-gray-300 group-hover:text-blue-400 transition-colors duration-300">
+                        <h4 className="text-lg font-medium text-text-primary mb-1">{info.title}</h4>
+                        <p className="text-text-secondary group-hover:text-primary-400 transition-colors duration-300">
                           {info.value}
                         </p>
                       </div>
@@ -143,7 +143,7 @@ export default function Contact() {
 
             {/* Social Links */}
             <div className={`${inView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '900ms' }}>
-              <h4 className="text-lg font-medium text-white mb-4">Follow Me</h4>
+              <h4 className="text-lg font-medium text-text-primary mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social) => {
                   const IconComponent = social.icon
@@ -153,7 +153,7 @@ export default function Contact() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`p-3 bg-gray-800/50 rounded-lg ${social.color} transition-all duration-300 hover:scale-110 hover:bg-gray-700/50`}
+                      className={`p-3 bg-dark-800/50 rounded-lg ${social.color} transition-all duration-300 hover:scale-110 hover:bg-dark-700/50`}
                       aria-label={social.label}
                     >
                       <IconComponent className="w-5 h-5" />
@@ -167,11 +167,11 @@ export default function Contact() {
           {/* Contact Form */}
           <div className={`${inView ? 'animate-fade-in-right' : 'opacity-0'}`} style={{ animationDelay: '600ms' }}>
             <div className="card">
-              <h3 className="text-2xl font-semibold mb-6 text-white">Send Me a Message</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-text-primary">Send Me a Message</h3>
               
               {submitted && (
-                <div className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg animate-fade-in-up">
-                  <p className="text-green-400 text-center">
+                <div className="mb-6 p-4 bg-accent-500/20 border border-accent-500/50 rounded-lg animate-fade-in-up">
+                  <p className="text-accent-400 text-center">
                     Thank you for your message! I'll get back to you soon.
                   </p>
                 </div>
@@ -268,8 +268,8 @@ export default function Contact() {
         {/* Additional CTA */}
         <div className={`text-center mt-16 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '1000ms' }}>
           <div className="card max-w-2xl mx-auto">
-            <h4 className="text-xl font-semibold mb-4 text-white">Ready to Start a Project?</h4>
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <h4 className="text-xl font-semibold mb-4 text-text-primary">Ready to Start a Project?</h4>
+            <p className="text-text-secondary mb-6 leading-relaxed">
               Whether you have a clear vision or just an idea, I'm here to help bring it to life. 
               Let's discuss your project and see how we can work together.
             </p>

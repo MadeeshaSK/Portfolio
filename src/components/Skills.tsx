@@ -17,34 +17,34 @@ export default function Skills() {
     frontend: {
       title: 'Frontend Development',
       skills: [
-        { name: 'React / Next.js', level: 95, color: 'from-blue-500 to-cyan-500' },
-        { name: 'TypeScript', level: 90, color: 'from-blue-600 to-blue-700' },
-        { name: 'Tailwind CSS', level: 92, color: 'from-teal-500 to-green-500' },
-        { name: 'JavaScript (ES6+)', level: 88, color: 'from-yellow-500 to-orange-500' },
-        { name: 'HTML5 / CSS3', level: 95, color: 'from-orange-500 to-red-500' },
-        { name: 'Vue.js', level: 75, color: 'from-green-500 to-emerald-500' },
+        { name: 'React / Next.js', level: 95, color: 'from-primary-500 to-secondary-500' },
+        { name: 'TypeScript', level: 90, color: 'from-secondary-600 to-secondary-700' },
+        { name: 'Tailwind CSS', level: 92, color: 'from-primary-500 to-accent-500' },
+        { name: 'JavaScript (ES6+)', level: 88, color: 'from-accent-500 to-accent-600' },
+        { name: 'HTML5 / CSS3', level: 95, color: 'from-secondary-500 to-primary-500' },
+        { name: 'Vue.js', level: 75, color: 'from-accent-500 to-primary-500' },
       ]
     },
     backend: {
       title: 'Backend Development',
       skills: [
-        { name: 'Node.js', level: 85, color: 'from-green-600 to-green-700' },
-        { name: 'Python', level: 80, color: 'from-blue-500 to-yellow-500' },
-        { name: 'Express.js', level: 88, color: 'from-gray-600 to-gray-700' },
-        { name: 'MongoDB', level: 82, color: 'from-green-500 to-green-600' },
-        { name: 'PostgreSQL', level: 78, color: 'from-blue-600 to-blue-700' },
-        { name: 'REST APIs', level: 90, color: 'from-purple-500 to-purple-600' },
+        { name: 'Node.js', level: 85, color: 'from-primary-600 to-primary-700' },
+        { name: 'Python', level: 80, color: 'from-secondary-500 to-accent-500' },
+        { name: 'Express.js', level: 88, color: 'from-dark-600 to-dark-700' },
+        { name: 'MongoDB', level: 82, color: 'from-accent-500 to-accent-600' },
+        { name: 'PostgreSQL', level: 78, color: 'from-secondary-600 to-secondary-700' },
+        { name: 'REST APIs', level: 90, color: 'from-primary-500 to-secondary-600' },
       ]
     },
     tools: {
       title: 'Tools & Technologies',
       skills: [
-        { name: 'Git / GitHub', level: 92, color: 'from-gray-700 to-gray-800' },
-        { name: 'Docker', level: 75, color: 'from-blue-500 to-blue-600' },
-        { name: 'AWS', level: 70, color: 'from-orange-500 to-orange-600' },
-        { name: 'Figma', level: 85, color: 'from-purple-500 to-pink-500' },
-        { name: 'VS Code', level: 95, color: 'from-blue-600 to-blue-700' },
-        { name: 'Linux', level: 80, color: 'from-yellow-600 to-orange-600' },
+        { name: 'Git / GitHub', level: 92, color: 'from-dark-700 to-dark-800' },
+        { name: 'Docker', level: 75, color: 'from-secondary-500 to-secondary-600' },
+        { name: 'AWS', level: 70, color: 'from-accent-500 to-accent-600' },
+        { name: 'Figma', level: 85, color: 'from-primary-500 to-secondary-500' },
+        { name: 'VS Code', level: 95, color: 'from-secondary-600 to-secondary-700' },
+        { name: 'Linux', level: 80, color: 'from-accent-600 to-accent-700' },
       ]
     }
   }
@@ -56,23 +56,23 @@ export default function Skills() {
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
             My <span className="gradient-text">Skills</span>
           </h2>
-          <div className={`w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto mb-8 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} />
-          <p className={`text-lg text-gray-300 max-w-2xl mx-auto ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
+          <div className={`w-20 h-1 bg-gradient-to-r from-primary-500 to-secondary-600 rounded-full mx-auto mb-8 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} />
+          <p className={`text-lg text-text-secondary max-w-2xl mx-auto ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
             Here are the technologies and tools I work with to bring ideas to life
           </p>
         </div>
 
         {/* Category Tabs */}
         <div className={`flex justify-center mb-12 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '400ms' }}>
-          <div className="bg-gray-900/50 backdrop-blur-sm rounded-lg p-2 border border-gray-800">
+          <div className="glass-effect rounded-lg p-2 border border-text-muted/20">
             {Object.entries(skillCategories).map(([key, category]) => (
               <button
                 key={key}
                 onClick={() => setActiveCategory(key)}
                 className={`px-6 py-3 rounded-md text-sm font-medium transition-all duration-300 ${
                   activeCategory === key
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25'
-                    : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
+                    ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/25'
+                    : 'text-text-muted hover:text-text-primary hover:bg-dark-800/50'
                 }`}
               >
                 {category.title}
@@ -97,11 +97,11 @@ export default function Skills() {
                 style={{ animationDelay: `${index * 100 + 800}ms` }}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-lg font-medium text-white">{skill.name}</span>
-                  <span className="text-sm text-gray-400">{skill.level}%</span>
+                  <span className="text-lg font-medium text-text-primary">{skill.name}</span>
+                  <span className="text-sm text-text-muted">{skill.level}%</span>
                 </div>
                 
-                <div className="w-full bg-gray-800 rounded-full h-3 overflow-hidden">
+                <div className="w-full bg-dark-800 rounded-full h-3 overflow-hidden">
                   <div 
                     className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out relative overflow-hidden`}
                     style={{ 
@@ -120,8 +120,8 @@ export default function Skills() {
         {/* Additional Info */}
         <div className={`text-center mt-16 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '1200ms' }}>
           <div className="card max-w-2xl mx-auto">
-            <h4 className="text-xl font-semibold mb-4 text-white">Always Learning</h4>
-            <p className="text-gray-400 leading-relaxed">
+            <h4 className="text-xl font-semibold mb-4 text-text-primary">Always Learning</h4>
+            <p className="text-text-muted leading-relaxed">
               Technology evolves rapidly, and so do I. I'm constantly exploring new frameworks, 
               tools, and best practices to stay at the forefront of web development and deliver 
               cutting-edge solutions.

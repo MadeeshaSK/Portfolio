@@ -38,7 +38,7 @@ export default function Header() {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-dark-950/80 backdrop-blur-lg border-b border-gray-800/50' 
+          ? 'bg-dark-950/80 backdrop-blur-lg border-b border-primary-500/20' 
           : 'bg-transparent'
       }`}
     >
@@ -54,7 +54,7 @@ export default function Header() {
               }}
               className="text-2xl font-bold gradient-text hover:scale-105 transition-transform duration-300"
             >
-              YourName
+              MadeeshaSK
             </a>
           </div>
 
@@ -68,17 +68,17 @@ export default function Header() {
                   e.preventDefault()
                   handleNavClick(item.href)
                 }}
-                className="text-gray-300 hover:text-blue-400 transition-colors duration-300 relative group py-2"
+                className="text-gray-300 hover:text-primary-400 transition-colors duration-300 relative group py-2"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-400 to-secondary-500 group-hover:w-full transition-all duration-300" />
               </a>
             ))}
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-gray-300 hover:text-blue-400 transition-colors duration-300"
+            className="md:hidden p-2 text-gray-300 hover:text-primary-400 transition-colors duration-300"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -99,7 +99,7 @@ export default function Header() {
                   e.preventDefault()
                   handleNavClick(item.href)
                 }}
-                className="block px-4 py-2 text-gray-300 hover:text-blue-400 hover:bg-gray-800/50 rounded-lg transition-all duration-300"
+                className="block px-4 py-2 text-gray-300 hover:text-primary-400 hover:bg-dark-800/50 rounded-lg transition-all duration-300"
               >
                 {item.label}
               </a>
