@@ -55,7 +55,7 @@ export default function Projects() {
       projectType: 'mobile',
       year: '2025',
       image: '/projects/second-chance.jpg',
-      status: 'ONGOING',
+      status: 'ONGOING(75%)',
     },
     {
       id: 4,
@@ -91,7 +91,6 @@ export default function Projects() {
       projectType: 'web app',
       year: '2025',
       image: '/projects/portfolio.png',
-      github: 'https://github.com/MadeeshaSK/Portfolio',
       demo: 'https://madeeshask.dev',
       linkedin: 'https://linkedin.com',
     },

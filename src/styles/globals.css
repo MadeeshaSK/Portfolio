@@ -172,6 +172,188 @@ body {
   }
 }
 
+/* Hero Section Animations - Extracted from JSX */
+@keyframes float-slow {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-20px) rotate(180deg); 
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% { 
+    transform: translateY(0px) rotate(360deg); 
+  }
+  50% { 
+    transform: translateY(-30px) rotate(180deg); 
+  }
+}
+
+@keyframes float-fast {
+  0%, 100% { 
+    transform: translateY(0px) scale(1); 
+  }
+  50% { 
+    transform: translateY(-15px) scale(1.1); 
+  }
+}
+
+@keyframes float-icon {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+    opacity: 0.2; 
+  }
+  50% { 
+    transform: translateY(-25px) rotate(180deg); 
+    opacity: 0.4; 
+  }
+}
+
+@keyframes float-icon-reverse {
+  0%, 100% { 
+    transform: translateY(0px) rotate(360deg); 
+    opacity: 0.15; 
+  }
+  50% { 
+    transform: translateY(-20px) rotate(180deg); 
+    opacity: 0.3; 
+  }
+}
+
+@keyframes float-social {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-8px); 
+  }
+}
+
+@keyframes float-particle {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px); 
+    opacity: 0.6; 
+  }
+  25% { 
+    transform: translateY(-10px) translateX(5px); 
+    opacity: 1; 
+  }
+  50% { 
+    transform: translateY(-5px) translateX(10px); 
+    opacity: 0.8; 
+  }
+  75% { 
+    transform: translateY(-15px) translateX(5px); 
+    opacity: 0.9; 
+  }
+}
+
+@keyframes float-particle-reverse {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px); 
+    opacity: 0.8; 
+  }
+  25% { 
+    transform: translateY(10px) translateX(-5px); 
+    opacity: 1; 
+  }
+  50% { 
+    transform: translateY(5px) translateX(-10px); 
+    opacity: 0.6; 
+  }
+  75% { 
+    transform: translateY(15px) translateX(-5px); 
+    opacity: 0.9; 
+  }
+}
+
+@keyframes spin-slow {
+  from { 
+    transform: rotate(0deg); 
+  }
+  to { 
+    transform: rotate(360deg); 
+  }
+}
+
+@keyframes spin-reverse {
+  from { 
+    transform: rotate(360deg); 
+  }
+  to { 
+    transform: rotate(0deg); 
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+@keyframes blink {
+  0%, 50% { 
+    opacity: 1; 
+  }
+  51%, 100% { 
+    opacity: 0; 
+  }
+}
+
+/* Hero Animation Classes */
+.animate-float-slow { 
+  animation: float-slow 6s ease-in-out infinite; 
+}
+
+.animate-float-reverse { 
+  animation: float-reverse 8s ease-in-out infinite; 
+}
+
+.animate-float-fast { 
+  animation: float-fast 4s ease-in-out infinite; 
+}
+
+.animate-float-icon { 
+  animation: float-icon 10s ease-in-out infinite; 
+}
+
+.animate-float-icon-reverse { 
+  animation: float-icon-reverse 12s ease-in-out infinite; 
+}
+
+.animate-float-social { 
+  animation: float-social 3s ease-in-out infinite; 
+}
+
+.animate-float-particle { 
+  animation: float-particle 8s ease-in-out infinite; 
+}
+
+.animate-float-particle-reverse { 
+  animation: float-particle-reverse 6s ease-in-out infinite; 
+}
+
+.animate-spin-slow { 
+  animation: spin-slow 20s linear infinite; 
+}
+
+.animate-spin-reverse { 
+  animation: spin-reverse 15s linear infinite; 
+}
+
+.animate-bounce-slow { 
+  animation: bounce-slow 2s ease-in-out infinite; 
+}
+
+.animate-blink { 
+  animation: blink 1s infinite; 
+}
+
 /* Custom Animations */
 @keyframes fadeInUp {
   from {
@@ -244,21 +426,6 @@ body {
   }
 }
 
-@keyframes bounce-slow {
-  0%, 20%, 53%, 80%, 100% {
-    transform: translate3d(0, 0, 0);
-  }
-  40%, 43% {
-    transform: translate3d(0, -30px, 0);
-  }
-  70% {
-    transform: translate3d(0, -15px, 0);
-  }
-  90% {
-    transform: translate3d(0, -4px, 0);
-  }
-}
-
 /* Utility Classes */
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out;
@@ -288,16 +455,14 @@ body {
   animation: pulse-slow 2s ease-in-out infinite;
 }
 
-.animate-bounce-slow {
-  animation: bounce-slow 2s ease-in-out infinite;
-}
-
 /* Delay Classes */
 .delay-200 { animation-delay: 200ms; }
 .delay-400 { animation-delay: 400ms; }
 .delay-600 { animation-delay: 600ms; }
 .delay-800 { animation-delay: 800ms; }
 .delay-1000 { animation-delay: 1000ms; }
+.delay-1200 { animation-delay: 1200ms; }
+.delay-1400 { animation-delay: 1400ms; }
 
 /* Form Styles */
 .form-input {
@@ -768,3 +933,91 @@ body {
   filter: grayscale(100%) brightness(0.5);
   animation: pulse 1.5s ease-in-out infinite;
 }
+
+/* Missing Tailwind-like utilities */
+.dark-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+}
+
+.dark-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(55, 65, 81, var(--tw-bg-opacity));
+}
+
+.dark-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
+}
+
+.dark-950 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(3, 7, 18, var(--tw-bg-opacity));
+}
+
+.primary-400 {
+  --tw-text-opacity: 1;
+  color: rgba(52, 211, 153, var(--tw-text-opacity));
+}
+
+.primary-300 {
+  --tw-text-opacity: 1;
+  color: rgba(110, 231, 183, var(--tw-text-opacity));
+}
+
+.secondary-400 {
+  --tw-text-opacity: 1;
+  color: rgba(6, 214, 160, var(--tw-text-opacity));
+}
+
+.accent-400 {
+  --tw-text-opacity: 1;
+  color: rgba(163, 230, 53, var(--tw-text-opacity));
+}
+
+.text-primary-400 {
+  --tw-text-opacity: 1;
+  color: rgba(52, 211, 153, var(--tw-text-opacity));
+}
+
+.text-secondary-400 {
+  --tw-text-opacity: 1;
+  color: rgba(6, 214, 160, var(--tw-text-opacity));
+}
+
+.text-accent-400 {
+  --tw-text-opacity: 1;
+  color: rgba(163, 230, 53, var(--tw-text-opacity));
+}
+
+.bg-dark-800\/50 {
+  background-color: rgba(31, 41, 55, 0.5);
+}
+
+.bg-dark-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(55, 65, 81, var(--tw-bg-opacity));
+}
+
+.bg-dark-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
+}
+
+/* Backdrop blur utilities */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+}
+
+/* Z-index utilities */
+.z-1 { z-index: 1; }
+.z-10 { z-index: 10; }
+.z-50 { z-index: 50; }

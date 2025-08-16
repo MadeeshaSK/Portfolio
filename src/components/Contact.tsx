@@ -4,8 +4,12 @@
 
 import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Facebook, Instagram,} from 'lucide-react'
-import { FaWhatsapp } from 'react-icons/fa';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Facebook, Instagram, AlertCircle, CheckCircle } from 'lucide-react'
+import { FaWhatsapp } from 'react-icons/fa'
+import emailjs from '@emailjs/browser'
+
+// Initialize EmailJS
+emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!)
 
 export default function Contact() {
   const { ref, inView } = useInView({
@@ -22,6 +26,7 @@ export default function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState('')
 
   const contactInfo = [
     {
@@ -84,27 +89,50 @@ export default function Contact() {
       href: 'https://wa.me/94763741826',
       color: 'hover:text-text-secondary',
     },
-    
   ]
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
+    
+    // Clear any existing error when user starts typing
+    if (error) {
+      setError('')
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError('')
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setSubmitted(true)
-    setFormData({ name: '', email: '', subject: '', message: '' })
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => setSubmitted(false), 5000)
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'madeeshasachindu2@gmail.com'
+      }
+      
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,    // Your Service ID
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,   // Your Template ID
+        templateParams
+      )
+      
+      setSubmitted(true)
+      setFormData({ name: '', email: '', subject: '', message: '' })
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitted(false), 5000)
+      
+    } catch (error) {
+      console.error('Failed to send email:', error)
+      setError('Failed to send message. Please try again or contact me directly.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -206,9 +234,21 @@ export default function Contact() {
               
               {submitted && (
                 <div className="mb-6 p-4 bg-accent-500/20 border border-accent-500/50 rounded-lg animate-fade-in-up">
-                  <p className="text-accent-400 text-center">
-                    Thank you for your message! I'll get back to you soon.
-                  </p>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-accent-400" />
+                    <p className="text-accent-400">
+                      Thank you for your message! I'll get back to you soon.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {error && (
+                <div className="mb-6 p-4 bg-red-500/20 border border-red-500/50 rounded-lg animate-fade-in-up">
+                  <div className="flex items-center gap-2">
+                    <AlertCircle className="w-5 h-5 text-red-400" />
+                    <p className="text-red-400">{error}</p>
+                  </div>
                 </div>
               )}
 

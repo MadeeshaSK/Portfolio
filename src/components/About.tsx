@@ -25,6 +25,7 @@ export default function About() {
       qualification: 'BSc (Hons) in Information Technology (UG)',
       details: 'CGPA 3.42',
       link: 'https://uom.lk/',
+      resultLink: 'https://drive.google.com/file/d/1FUJMN4omnrnifyFv9Pe5g5xjeJJC-0PE/view?usp=drive_link', 
     },
     {
       icon: GraduationCap,
@@ -33,13 +34,15 @@ export default function About() {
       qualification: 'A/L (2021) in Physical Science Scheme',
       details: 'ABB z = 1.6627',
       link: 'https://www.dharmaraja.lk/',
+      resultLink: 'https://drive.google.com/file/d/1DN3sSyJEgXTcK22VGheTjT8grODC84eD/view?usp=drive_link', 
     },
     {
       icon: Calendar,
       period: '2018',
       qualification: 'O/L (2018)',
       details: '8A 1B',
-      link: '#', 
+      link: 'https://drive.google.com/file/d/1o89qs-Ctaz3629JdP-wRZ9vWWwRWe9MI/view?usp=drive_link', 
+      resultLink: 'https://drive.google.com/file/d/1o89qs-Ctaz3629JdP-wRZ9vWWwRWe9MI/view?usp=drive_link', 
     },
   ]
 
@@ -156,7 +159,14 @@ export default function About() {
                         </p>
                       )}
                       <p className="text-text-muted text-sm font-medium">
-                        {edu.details}
+                        <a 
+                          href={edu.resultLink}
+                          className="hover:text-primary-500 hover:underline transition-colors duration-200"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {edu.details}
+                        </a>
                       </p>
                     </div>
                   </div>
