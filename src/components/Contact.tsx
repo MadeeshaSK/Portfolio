@@ -4,7 +4,8 @@
 
 import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Facebook, Instagram,} from 'lucide-react'
+import { FaWhatsapp } from 'react-icons/fa';
 
 export default function Contact() {
   const { ref, inView } = useInView({
@@ -26,42 +27,61 @@ export default function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      value: 'hello@yourname.dev',
-      link: 'mailto:hello@yourname.dev',
+      value: 'madeeshasachindu2@gmail.com',
+      link: 'mailto:madeeshasachindu2@gmail.com',
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      value: '+94 76 374 1826, +94 75 932 7242',
+      link: 'tel:+94763741826',
     },
     {
       icon: MapPin,
       title: 'Location',
-      value: 'San Francisco, CA',
-      link: 'https://maps.google.com',
+      value: 'Moratuwa, Sri Lanka, Posting : No 30/2, Urulewahtha, Wattappola',
+      link: 'https://maps.app.goo.gl/oBTKHMSxh1t43KDNA',
     },
   ]
 
   const socialLinks = [
     {
+      icon: Linkedin,
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/madeesha-karunarathna',
+      color: 'hover:text-secondary-400',
+    },
+    {
       icon: Github,
       label: 'GitHub',
-      href: 'https://github.com',
+      href: 'https://github.com/MadeeshaSK',
       color: 'hover:text-text-secondary',
     },
     {
-      icon: Linkedin,
-      label: 'LinkedIn',
-      href: 'https://linkedin.com',
-      color: 'hover:text-secondary-400',
+      icon: Mail,
+      label: 'Email',
+      href: 'mailto:madeeshasachindu2@gmail.com',
+      color: 'hover:text-text-secondary',
     },
     {
-      icon: Twitter,
-      label: 'Twitter',
-      href: 'https://twitter.com',
-      color: 'hover:text-secondary-400',
+      icon: Facebook,
+      label: 'Facebook',
+      href: 'https://www.facebook.com/madeeshasachindu.karunarathna',
+      color: 'hover:text-text-secondary',
     },
+    {
+      icon: Instagram,
+      label: 'Instagram',
+      href: 'https://www.instagram.com/m_a_d_e_e__sh_a/',
+      color: 'hover:text-text-secondary',
+    },
+    {
+      icon: FaWhatsapp,
+      label: 'Whatsapp',
+      href: 'https://wa.me/94763741826',
+      color: 'hover:text-text-secondary',
+    },
+    
   ]
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -273,13 +293,27 @@ export default function Contact() {
               Whether you have a clear vision or just an idea, I'm here to help bring it to life. 
               Let's discuss your project and see how we can work together.
             </p>
-            <a 
-              href="mailto:hello@yourname.dev?subject=Project%20Inquiry"
-              className="btn btn-secondary group"
-            >
-              Start a Conversation
-              <Mail className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-            </a>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+              {/* Email Button */}
+              <a 
+                href="mailto:madeeshasachindu2@gmail.com?subject=Project%20Inquiry"
+                className="btn btn-secondary group flex items-center gap-2"
+              >
+                Start a Conversation
+                <Mail className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+              </a>
+
+              {/* WhatsApp Button */}
+              <a
+                href="https://wa.me/94763741826"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-accent group flex items-center gap-2 border border-white hover:bg-white hover:text-dark-900 transition-colors duration-300"
+              >
+                Quick Chat via WhatsApp
+                <FaWhatsapp className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

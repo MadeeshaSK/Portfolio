@@ -120,6 +120,15 @@ export default function Hero() {
 
               {/* Social Links */}
               <div className="flex justify-center lg:justify-start space-x-6 animate-fade-in-up delay-800">
+              <a 
+                  href="https://www.linkedin.com/in/madeesha-karunarathna" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-dark-800/50 hover:bg-dark-700 transition-all duration-300 social-link-linkedin"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-6 h-6" />
+                </a>
                 <a 
                   href="https://github.com/MadeeshaSK" 
                   target="_blank" 
@@ -128,15 +137,6 @@ export default function Hero() {
                   aria-label="GitHub"
                 >
                   <Github className="w-6 h-6" />
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/madeesha-karunarathna" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-dark-800/50 hover:bg-dark-700 transition-all duration-300 social-link-linkedin"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-6 h-6" />
                 </a>
                 <a 
                   href="mailto:madeeshasachindu2@gmail.com"
