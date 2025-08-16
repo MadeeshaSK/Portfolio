@@ -557,3 +557,214 @@ body {
     width: 2px;
   }
 }
+
+/* Skill Icon Filters */
+.skill-icon {
+  transition: all 0.3s ease;
+}
+
+/* Default state - converts to grayscale with primary color tint */
+.skill-icon {
+  filter: 
+    brightness(0) 
+    saturate(100%) 
+    invert(56%) 
+    sepia(91%) 
+    saturate(2878%) 
+    hue-rotate(142deg) 
+    brightness(103%) 
+    contrast(80%);
+}
+
+/* Hover state - shows original colors */
+.card:hover .skill-icon {
+  filter: none;
+  transform: scale(1.1);
+}
+
+/* Alternative: Monochrome with theme color */
+.skill-icon-mono {
+  filter: 
+    grayscale(100%) 
+    brightness(0.8) 
+    contrast(1.2) 
+    sepia(100%) 
+    hue-rotate(142deg) 
+    saturate(2);
+}
+
+/* Dark mode specific adjustments */
+@media (prefers-color-scheme: dark) {
+  .skill-icon {
+    filter: 
+      brightness(0) 
+      saturate(100%) 
+      invert(56%) 
+      sepia(91%) 
+      saturate(2878%) 
+      hue-rotate(142deg) 
+      brightness(120%) 
+      contrast(90%);
+  }
+}
+
+/* Category-specific color themes */
+.skill-category-languages .skill-icon {
+  filter: 
+    brightness(0) 
+    saturate(100%) 
+    invert(32%) 
+    sepia(99%) 
+    saturate(1824%) 
+    hue-rotate(204deg) 
+    brightness(95%) 
+    contrast(101%);
+}
+
+.skill-category-webdev .skill-icon {
+  filter: 
+    brightness(0) 
+    saturate(100%) 
+    invert(56%) 
+    sepia(91%) 
+    saturate(2878%) 
+    hue-rotate(142deg) 
+    brightness(103%) 
+    contrast(80%);
+}
+
+.skill-category-mobile .skill-icon {
+  filter: 
+    brightness(0) 
+    saturate(100%) 
+    invert(67%) 
+    sepia(98%) 
+    saturate(1565%) 
+    hue-rotate(184deg) 
+    brightness(96%) 
+    contrast(94%);
+}
+
+.skill-category-databases .skill-icon {
+  filter: 
+    brightness(0) 
+    saturate(100%) 
+    invert(42%) 
+    sepia(93%) 
+    saturate(1352%) 
+    hue-rotate(87deg) 
+    brightness(119%) 
+    contrast(119%);
+}
+
+.skill-category-cloud .skill-icon {
+  filter: 
+    brightness(0) 
+    saturate(100%) 
+    invert(74%) 
+    sepia(65%) 
+    saturate(3994%) 
+    hue-rotate(2deg) 
+    brightness(99%) 
+    contrast(107%);
+}
+
+.skill-category-tools .skill-icon {
+  filter: 
+    brightness(0) 
+    saturate(100%) 
+    invert(48%) 
+    sepia(79%) 
+    saturate(2476%) 
+    hue-rotate(86deg) 
+    brightness(118%) 
+    contrast(119%);
+}
+
+.skill-category-devops .skill-icon {
+  filter: 
+    brightness(0) 
+    saturate(100%) 
+    invert(27%) 
+    sepia(51%) 
+    saturate(2878%) 
+    hue-rotate(346deg) 
+    brightness(104%) 
+    contrast(97%);
+}
+
+.skill-category-soft_skills .skill-icon {
+  filter: 
+    brightness(0) 
+    saturate(100%) 
+    invert(84%) 
+    sepia(23%) 
+    saturate(506%) 
+    hue-rotate(95deg) 
+    brightness(95%) 
+    contrast(86%);
+}
+
+/* Utility classes for manual color control */
+.icon-primary {
+  filter: 
+    brightness(0) 
+    saturate(100%) 
+    invert(56%) 
+    sepia(91%) 
+    saturate(2878%) 
+    hue-rotate(142deg) 
+    brightness(103%) 
+    contrast(80%);
+}
+
+.icon-secondary {
+  filter: 
+    brightness(0) 
+    saturate(100%) 
+    invert(67%) 
+    sepia(98%) 
+    saturate(1565%) 
+    hue-rotate(184deg) 
+    brightness(96%) 
+    contrast(94%);
+}
+
+.icon-accent {
+  filter: 
+    brightness(0) 
+    saturate(100%) 
+    invert(74%) 
+    sepia(65%) 
+    saturate(3994%) 
+    hue-rotate(2deg) 
+    brightness(99%) 
+    contrast(107%);
+}
+
+/* Alternative approach using CSS masks (for solid colors) */
+.skill-icon-mask {
+  background: rgb(var(--primary));
+  mask: url('data:image/svg+xml;base64,...') no-repeat center;
+  mask-size: contain;
+  width: 48px;
+  height: 48px;
+}
+
+/* Hover effects */
+.skill-icon:hover {
+  filter: none !important;
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Active state */
+.card.active .skill-icon {
+  filter: none;
+  transform: scale(1.05);
+}
+
+/* Loading state */
+.skill-icon.loading {
+  filter: grayscale(100%) brightness(0.5);
+  animation: pulse 1.5s ease-in-out infinite;
+}

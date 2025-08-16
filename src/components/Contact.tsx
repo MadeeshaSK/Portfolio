@@ -39,7 +39,10 @@ export default function Contact() {
     {
       icon: MapPin,
       title: 'Location',
-      value: 'Moratuwa, Sri Lanka, Posting : No 30/2, Urulewahtha, Wattappola',
+      value: [
+        'Moratuwa, Sri Lanka',
+        'Postal Address: No 30/2, Urulewaththa, Wattappola',
+      ],
       link: 'https://maps.app.goo.gl/oBTKHMSxh1t43KDNA',
     },
   ]
@@ -151,9 +154,21 @@ export default function Contact() {
                       </div>
                       <div>
                         <h4 className="text-lg font-medium text-text-primary mb-1">{info.title}</h4>
-                        <p className="text-text-secondary group-hover:text-primary-400 transition-colors duration-300">
-                          {info.value}
-                        </p>
+
+                        {Array.isArray(info.value) ? (
+                          info.value.map((line, i) => (
+                            <p
+                              key={i}
+                              className="text-text-secondary group-hover:text-primary-400 transition-colors duration-300"
+                            >
+                              {line}
+                            </p>
+                          ))
+                        ) : (
+                          <p className="text-text-secondary group-hover:text-primary-400 transition-colors duration-300">
+                            {info.value}
+                          </p>
+                        )}
                       </div>
                     </div>
                   </a>
