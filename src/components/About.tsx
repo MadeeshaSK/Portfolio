@@ -12,6 +12,7 @@ export default function About() {
   })
 
   const stats = [
+    { number: '1+', label: 'Projects Under Industry Mentorship' },
     { number: '3+', label: 'Years Coding Experience' },
     { number: '5+', label: 'Projects Completed' },
   ]
@@ -46,9 +47,9 @@ export default function About() {
     { name: 'Cloud Mastery with AWS', link: '#' },
     { name: 'Mastering CI/CD Pipelines', link: '#' },
     { name: 'Introduction to Cybersecurity', link: '#' },
-    { name: 'OpenUOM Python', link: '#' },
-    { name: 'OpenUOM Web Development', link: '#' },
-    { name: 'Solo Learn Java', link: '#' },
+    { name: 'OpenUOM Python', link: 'https://www.linkedin.com/posts/madeesha-karunarathna_certificate-activity-7270404725978611712-cKn-?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJe91gBXQEAH54t2W8kIqsJXbgXVT-GEBM' },
+    { name: 'OpenUOM Web Development', link: 'https://www.linkedin.com/posts/madeesha-karunarathna_web-design-for-beginers-activity-7250182741873278977-Ym7K?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJe91gBXQEAH54t2W8kIqsJXbgXVT-GEBM' },
+    { name: 'Solo Learn Java', link: 'https://www.linkedin.com/posts/madeesha-karunarathna_sololearn-introduction-to-java-activity-7253021235041771520-yymU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJe91gBXQEAH54t2W8kIqsJXbgXVT-GEBM' },
   ]
 
   return (

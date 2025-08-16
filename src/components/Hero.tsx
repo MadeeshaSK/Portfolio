@@ -146,7 +146,7 @@ export default function Hero() {
                   <Mail className="w-6 h-6" />
                 </a>
                 <a 
-                  href="https://www.facebook.com/yourprofile" 
+                  href="https://www.facebook.com/madeeshasachindu.karunarathna" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-dark-800/50 hover:bg-dark-700 transition-all duration-300"
@@ -156,7 +156,7 @@ export default function Hero() {
                 </a>
 
                 <a 
-                  href="https://www.instagram.com/yourprofile" 
+                  href="https://www.instagram.com/m_a_d_e_e__sh_a/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-dark-800/50 hover:bg-dark-700 transition-all duration-300"
