@@ -138,7 +138,7 @@ export default function Hero() {
               {/* Main Heading with enhanced animations */}
               <div className="mb-6">
                 <h1 className={`text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                  Hi, I'm{' '}
+                  Hi, I&apos;m{' '}
                   <span className="gradient-text relative inline-block">
                     Madeesha
                     <span className="absolute -inset-1 bg-gradient-to-r from-primary-400/20 to-secondary-400/20 rounded-lg blur animate-pulse-glow" />
