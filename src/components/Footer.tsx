@@ -27,10 +27,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <h3 className="text-2xl font-bold gradient-text mb-4">YourName</h3>
+              <h3 className="text-2xl font-bold gradient-text mb-4">MadeeshaSK</h3>
               <p className="text-text-secondary leading-relaxed max-w-md">
-                Full Stack Developer passionate about creating exceptional digital experiences 
-                through innovative design and clean code.
+              Full-Stack Developer passionate about creating exceptional digital experiences across web, mobile, and desktop applications.
               </p>
             </div>
           </div>
@@ -63,17 +62,17 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold text-text-primary mb-4">Services</h4>
             <ul className="space-y-2">
-              {[
-                'Web Development',
-                'Mobile Apps', 
-                'UI/UX Design',
-                'Consulting',
-                'Maintenance'
-              ].map((service) => (
-                <li key={service}>
-                  <span className="text-text-muted">{service}</span>
-                </li>
-              ))}
+            {[
+              'Web Development',
+              'Mobile App Development',
+              'UI/UX Design',
+              'Desktop App Development',
+              'AI, DevOps, Networking, and Cybersecurity'
+            ].map((service) => (
+              <li key={service}>
+                <span className="text-text-muted">{service}</span>
+              </li>
+            ))}
             </ul>
           </div>
         </div>
@@ -82,12 +81,11 @@ export default function Footer() {
         <div className="border-t border-text-muted/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-text-muted text-sm">
-              © {currentYear} YourName. All rights reserved.
+              © {currentYear} MadeeshaSK. All rights reserved.
             </div>
             
             <div className="flex items-center text-text-muted text-sm">
-              Made with <Heart className="w-4 h-4 text-accent-500 mx-1 animate-pulse" /> 
-              and lots of coffee ☕
+            ⚡ Fun fact 🎉: Everything is relative 😎
             </div>
           </div>
         </div>
