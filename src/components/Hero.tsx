@@ -227,7 +227,7 @@ export default function Hero() {
                 <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold gradient-text relative overflow-hidden">
                   {!imageError ? (
                     <Image
-                      src="/image.png"
+                      src="/image2.png"
                       alt="Madeesha - Full Stack Developer"
                       fill
                       className="object-contain animate-slide-in-right rounded-full"
