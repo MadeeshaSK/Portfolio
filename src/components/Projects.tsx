@@ -36,6 +36,18 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
+      title: 'POINTEDGE - POS WEBSITE',
+      description: 'This project is a Point of Sale (POS) website for a supermarket. My responsibilities include implementing discount and loyalty management features to enhance customer engagement and streamline promotional offers. Second-year software development group project in collaboration with Taycantech Company.',
+      tags: ['React.js', 'Chakra UI', 'Spring Boot', 'MySQL'],
+      category: 'team',
+      projectType: 'web app',
+      year: '2024/2025',
+      image: '/projects/point-edge.png',
+      linkedin: 'https://www.linkedin.com/posts/madeesha-karunarathna_softwareengineering-possystem-springboot-activity-7360944662422962176-C5OU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJe91gBXQEAH54t2W8kIqsJXbgXVT-GEBM',
+      featured: true,
+    },
+    {
+      id: 2,
       title: 'MSGLYAPI – SAAS PLATFORM',
       description: 'This SaaS platform offers SMS, email, and OTP verification services accessible via API keys or through an intuitive web interface. Users get a dashboard to manage their usage and view analytics, while admins have a full control panel to oversee platform operations with role-based access.',
       tags: ['Node.js', 'Firebase', 'Python', 'Next.js', 'Tailwind CSS', 'Docker', 'Redis'],
@@ -48,18 +60,7 @@ export default function Projects() {
       linkedin: 'https://www.linkedin.com/posts/madeesha-karunarathna_nodejs-firebase-saas-activity-7358515962419056641-3cjA?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJe91gBXQEAH54t2W8kIqsJXbgXVT-GEBM',
       featured: true,
     },
-    {
-      id: 2,
-      title: 'POINTEDGE - POS WEBSITE',
-      description: 'This project is a Point of Sale (POS) website for a supermarket. My responsibilities include implementing discount and loyalty management features to enhance customer engagement and streamline promotional offers. Second-year software development group project in collaboration with Taycantech Company.',
-      tags: ['React.js', 'Chakra UI', 'Spring Boot', 'MySQL'],
-      category: 'team',
-      projectType: 'web app',
-      year: '2024/2025',
-      image: '/projects/point-edge.png',
-      linkedin: 'https://www.linkedin.com/posts/madeesha-karunarathna_softwareengineering-possystem-springboot-activity-7360944662422962176-C5OU?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFJe91gBXQEAH54t2W8kIqsJXbgXVT-GEBM',
-      featured: true,
-    },
+    
     {
       id: 3,
       title: 'SECOND CHANCE - MOBILE APPLICATION',
@@ -69,6 +70,7 @@ export default function Projects() {
       projectType: 'mobile',
       year: '2025',
       image: '/projects/second-chance.jpg',
+      github: 'https://github.com/MadeeshaSK/Second-Chance-frontend-and-firebase',
       status: 'ONGOING(75%)',
     },
     {

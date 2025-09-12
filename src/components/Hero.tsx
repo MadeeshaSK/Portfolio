@@ -184,7 +184,7 @@ export default function Hero() {
                 </button>
                 
                 <a 
-                  href="/Madeesha-CV.pdf" 
+                  href="/Madeesha-Karunarathna.pdf" 
                   download
                   className="btn btn-secondary group relative overflow-hidden hover:scale-105 transition-all duration-300"
                 >
