@@ -180,7 +180,7 @@ export default function About() {
             <div className="space-y-6">
               <p className={`text-lg text-text-secondary leading-relaxed transition-all duration-1000 delay-600 ${inView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                 I'm <span className="text-primary-400 font-semibold">Madeesha Sachindu Karunarathna</span> from Moratuwa, Sri Lanka. A passionate 
-                3rd year IT undergraduate at the <span className="text-secondary-400 font-semibold">University of Moratuwa</span> with over 3 years of 
+                final year IT undergraduate at the <span className="text-secondary-400 font-semibold">University of Moratuwa</span> with over 3 years of 
                 experience in real-world projects. My journey in tech has led me through 5+ completed 
                 projects, developing a strong interest in <span className="gradient-text font-semibold">full-stack development</span> for web, mobile, 
                 and desktop applications, along with a deep passion for cybersecurity, networking, 

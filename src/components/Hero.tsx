@@ -18,7 +18,7 @@ export default function Hero() {
     'Full Stack Developer',
     'Mobile Application Developer', 
     'Desktop Application Developer',
-    'UI/UX Designer',
+    'Cybersecurity & Networking Enthusiast',
     'Tech Enthusiast'
   ];
 
@@ -158,7 +158,7 @@ export default function Hero() {
                 </div>
                 
                 <p className={`text-sm sm:text-base text-gray-400 mt-2 transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                  Third year undergraduate at University of Moratuwa, Sri Lanka.
+                  Final year undergraduate at University of Moratuwa, Sri Lanka.
                 </p>
               </div>
 
