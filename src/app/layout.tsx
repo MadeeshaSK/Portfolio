@@ -1,14 +1,18 @@
 // src/app/layout.tsx
 
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import "../styles/globals.css"
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+}
 
 export const metadata: Metadata = {
   title: "MadeeshaSK | Software Engineer Intern",
   description: "Full-Stack Developer passionate about creating exceptional digital experiences across web, mobile, and desktop applications.",
   keywords: ["web developer", "portfolio", "react", "nextjs", "typescript", "full stack"],
   authors: [{ name: "Madeesha Sachindu Karunarathna" }],
-  viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
   openGraph: {
     title: "MadeeshaSK | Software Engineer Intern",
