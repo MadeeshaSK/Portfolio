@@ -18,15 +18,15 @@ export default function About() {
   // Enhanced stats with icons
   const stats = [
     {
-      number: 1,
+      number: 10,
       suffix: '+',
-      label: 'Projects Under Industry Mentorship',
+      label: 'Industry Project Contributions',
       icon: Target,
       color: 'from-primary-500 to-secondary-500',
       delay: 0
     },
     {
-      number: 3,
+      number: 4,
       suffix: '+',
       label: 'Years Coding Experience',
       icon: Code2,
@@ -36,7 +36,7 @@ export default function About() {
     {
       number: 5,
       suffix: '+',
-      label: 'Projects Completed',
+      label: 'Academic & Personal Projects',
       icon: Trophy,
       color: 'from-accent-500 to-primary-500',
       delay: 400
