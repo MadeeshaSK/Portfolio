@@ -17,7 +17,7 @@ export default function Footer() {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
     }
-    
+
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
@@ -36,12 +36,12 @@ export default function Footer() {
         <div className="absolute top-1/4 left-1/6 w-64 h-64 bg-primary-500/5 rounded-full blur-3xl animate-float-slow" />
         <div className="absolute bottom-1/3 right-1/5 w-80 h-80 bg-secondary-500/5 rounded-full blur-3xl animate-float-reverse" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-accent-500/5 rounded-full blur-2xl animate-float-fast" />
-        
+
         {/* Floating particles */}
         <div className="absolute top-20 right-1/4 w-2 h-2 bg-primary-400/40 rounded-full animate-float-particle" />
         <div className="absolute bottom-40 left-1/5 w-1 h-1 bg-secondary-400/50 rounded-full animate-float-particle-reverse" />
         <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-accent-400/30 rounded-full animate-bounce-slow" />
-        
+
         {/* Tech icons floating */}
         <div className="absolute top-1/4 right-1/6 animate-float-icon opacity-8">
           <Code2 className="w-8 h-8 text-primary-400" />
@@ -55,12 +55,12 @@ export default function Footer() {
       </div>
 
       {/* Cursor follower */}
-      <div 
+      <div
         className="fixed pointer-events-none z-50 w-4 h-4 bg-primary-400/20 rounded-full blur-sm transition-all duration-300 ease-out"
-        style={{ 
-          left: mousePosition.x - 8, 
+        style={{
+          left: mousePosition.x - 8,
           top: mousePosition.y - 8,
-          transform: `scale(${mousePosition.x > 0 ? 1 : 0})` 
+          transform: `scale(${mousePosition.x > 0 ? 1 : 0})`
         }}
       />
 
@@ -73,7 +73,7 @@ export default function Footer() {
         <ArrowUp className="w-5 h-5 text-white relative z-10 group-hover:-translate-y-0.5 transition-transform duration-300" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary-400 to-secondary-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
         <div className="absolute -inset-1 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full blur opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
-        
+
         {/* Hover particles */}
         <div className="absolute top-1 right-1 w-1 h-1 bg-white/60 rounded-full animate-ping group-hover:animate-none" />
         <div className="absolute bottom-1 left-1 w-1 h-1 bg-white/60 rounded-full animate-ping delay-300 group-hover:animate-none" />
@@ -101,7 +101,7 @@ export default function Footer() {
               <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary-400 to-transparent rounded-full" />
             </h4>
             <ul className="space-y-2">
-              {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item, index) => (
+              {['Home', 'Experience', 'Recommendations', 'About', 'Skills', 'Projects', 'Contact'].map((item, index) => (
                 <li key={item} className="animate-fade-in-up" style={{ animationDelay: `${300 + index * 100}ms` }}>
                   <a
                     href={`#${item.toLowerCase()}`}
@@ -133,7 +133,6 @@ export default function Footer() {
               {[
                 'Web Development',
                 'Mobile App Development',
-                'UI/UX Design',
                 'Desktop App Development',
                 'AI, DevOps, Networking, and Cybersecurity'
               ].map((service, index) => (
@@ -151,11 +150,12 @@ export default function Footer() {
         {/* Enhanced Bottom Bar */}
         <div className={`border-t border-text-muted/20 mt-12 pt-8 transition-all duration-1000 delay-800 ${inView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2 text-text-muted text-sm">
+            <div className="flex items-center gap-2 text-text-muted text-sm flex-wrap">
               <span>© {currentYear} MadeeshaSK. All rights reserved.</span>
+              <span className="px-2 py-0.5 text-xs rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 font-mono font-medium">v1.1.0</span>
               <div className="w-1 h-1 bg-primary-400/60 rounded-full animate-pulse" />
             </div>
-            
+
             <div className="flex items-center gap-3 text-text-muted text-sm">
               <Sparkles className="w-4 h-4 text-accent-400 animate-pulse" />
               <span>⚡ Fun fact 🎉: Everything is relative 😎</span>
