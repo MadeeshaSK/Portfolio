@@ -153,7 +153,7 @@ export default function Header() {
 
         {/* Enhanced Mobile Navigation */}
         <div className={`md:hidden transition-all duration-500 overflow-hidden ${
-          isOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+          isOpen ? 'max-h-[450px] opacity-100' : 'max-h-0 opacity-0'
         }`}>
           <div className="py-4 space-y-2 bg-dark-900/90 backdrop-blur-xl rounded-lg border border-primary-500/20 mt-4 mx-4 relative">
             {/* Background effects */}
