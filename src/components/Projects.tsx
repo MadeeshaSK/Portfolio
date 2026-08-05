@@ -255,8 +255,8 @@ export default function Projects() {
 
         {/* Enhanced Filter Buttons */}
         <div className={`flex justify-center mb-12 transition-all duration-1000 delay-800 ${inView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-          <div className="glass-effect rounded-xl p-3 border border-text-muted/20 backdrop-blur-lg">
-            <div className="flex gap-2">
+          <div className="glass-effect rounded-xl p-3 border border-text-muted/20 backdrop-blur-lg max-w-full overflow-x-auto">
+            <div className="flex gap-2 min-w-[320px]">
               {filters.map((filter) => {
                 const IconComponent = filter.icon
                 const isActive = activeFilter === filter.id

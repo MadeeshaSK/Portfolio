@@ -39,14 +39,14 @@ export default function Contact() {
       title: 'Email',
       value: 'madeeshasachindu2@gmail.com',
       link: 'mailto:madeeshasachindu2@gmail.com',
-      color: 'from-red-500 to-pink-600',
+      color: 'from-primary-500 to-secondary-500',
     },
     {
       icon: Phone,
       title: 'Phone',
       value: '+94 76 374 1826, +94 75 932 7242',
       link: 'tel:+94763741826',
-      color: 'from-green-500 to-emerald-600',
+      color: 'from-emerald-500 to-teal-600',
     },
     {
       icon: MapPin,
@@ -115,18 +115,36 @@ export default function Contact() {
     setError('')
     
     try {
-      // Simulate form submission (replace with actual EmailJS implementation)
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      
-      setSubmitted(true)
-      setFormData({ name: '', email: '', subject: '', message: '' })
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitted(false), 5000)
-      
-    } catch (error) {
-      console.error('Failed to send email:', error)
-      setError('Failed to send message. Please try again or contact me directly.')
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || '41d2ab75-6680-45ee-8866-7146d967e626'
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          from_name: 'Portfolio Contact Form',
+        }),
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setSubmitted(true)
+        setFormData({ name: '', email: '', subject: '', message: '' })
+        setTimeout(() => setSubmitted(false), 5000)
+      } else {
+        setError(result.message || 'Failed to send message via Web3Forms.')
+      }
+    } catch (err: any) {
+      console.error('Failed to send email via Web3Forms:', err)
+      setError('Failed to send message. Please try emailing directly at madeeshasachindu2@gmail.com.')
     } finally {
       setIsSubmitting(false)
     }
@@ -206,13 +224,12 @@ export default function Contact() {
                   >
                     <div className="flex items-center space-x-4">
                       <div className="flex-shrink-0">
-                        <div className={`w-14 h-14 bg-gradient-to-br ${info.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 relative`}>
+                        <div className={`w-14 h-14 bg-gradient-to-br ${info.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 relative shadow-md`}>
                           <IconComponent className="w-7 h-7 text-white relative z-10" />
-                          <div className="absolute inset-0 bg-white/10 rounded-xl blur animate-pulse" />
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-text-primary mb-1 group-hover:text-primary-400 transition-colors duration-300">
+                        <h4 className="text-lg font-bold text-primary-400 mb-1 group-hover:text-primary-300 transition-colors duration-300">
                           {info.title}
                         </h4>
 
@@ -220,13 +237,13 @@ export default function Contact() {
                           info.value.map((line, i) => (
                             <p
                               key={i}
-                              className="text-text-secondary group-hover:text-primary-400 transition-colors duration-300"
+                              className="text-emerald-400 font-medium group-hover:text-emerald-300 transition-colors duration-300"
                             >
                               {line}
                             </p>
                           ))
                         ) : (
-                          <p className="text-text-secondary group-hover:text-primary-400 transition-colors duration-300">
+                          <p className="text-emerald-400 font-medium group-hover:text-emerald-300 transition-colors duration-300">
                             {info.value}
                           </p>
                         )}

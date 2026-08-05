@@ -39,7 +39,7 @@ export default function RootLayout({
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_80%_80%,rgba(6,214,160,0.1),rgba(255,255,255,0))]" />
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_20%_50%,rgba(132,204,22,0.05),rgba(255,255,255,0))]" />
           </div>
-                   
+
           {/* Content */}
           <div className="relative z-10">
             {children}

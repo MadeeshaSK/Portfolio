@@ -82,17 +82,20 @@ export default function Skills() {
       skills: [
         { name: 'HTML', imagePath: '/skills/html5.png', level: 90 },
         { name: 'CSS', imagePath: '/skills/css.png', level: 85 },
-        { name: 'SaSS', imagePath: '/skills/sass.png', level: 80 },
         { name: 'JavaScript', imagePath: '/skills/javascript.png', level: 88 },
         { name: 'TypeScript', imagePath: '/skills/typescript.png', level: 82 },
+        { name: 'SaSS', imagePath: '/skills/sass.png', level: 80 },
         { name: 'React.js', imagePath: '/skills/react.png', level: 92 },
         { name: 'Next.js', imagePath: '/skills/nextdotjs.png', level: 85 },
-        { name: 'Chakra UI', imagePath: '/skills/chakraui.png', level: 78 },
-        { name: 'Tailwind CSS', imagePath: '/skills/tailwindcss.png', level: 90 },
         { name: 'Node.js', imagePath: '/skills/nodedotjs.png', level: 85 },
         { name: 'Spring Boot', imagePath: '/skills/springboot.png', level: 80 },
+        { name: '.NET', imagePath: '/skills/dotnet.png', level: 80 },
         { name: 'Spring Security', imagePath: '/skills/springsecurity.png', level: 75 },
         { name: 'Microservices', imagePath: '/skills/microservice.png', level: 70 },
+        { name: 'Tailwind CSS', imagePath: '/skills/tailwindcss.png', level: 90 },
+        { name: 'Bootstrap', imagePath: '/skills/bootstrap.png', level: 85 },
+        { name: 'jQuery', imagePath: '/skills/jquery.png', level: 80 },
+        { name: 'Chakra UI', imagePath: '/skills/chakraui.png', level: 78 },
       ]
     },
     languages: {
@@ -100,6 +103,7 @@ export default function Skills() {
       subtitle: 'Core Programming Skills',
       skills: [
         { name: 'Java', imagePath: '/skills/java.png', level: 90 },
+        { name: 'C#', imagePath: '/skills/csharp.png', level: 80 },
         { name: 'C', imagePath: '/skills/c.png', level: 75 },
         { name: 'Python', imagePath: '/skills/python.png', level: 80 },
         { name: 'Dart', imagePath: '/skills/dart.png', level: 85 },
@@ -110,6 +114,7 @@ export default function Skills() {
       subtitle: 'Cross-platform Solutions',
       skills: [
         { name: 'Flutter', imagePath: '/skills/flutter.png', level: 85 },
+        { name: 'React Native', imagePath: '/skills/react.png', level: 82 },
       ]
     },
     databases: {
@@ -117,6 +122,7 @@ export default function Skills() {
       subtitle: 'Data Storage & Management',
       skills: [
         { name: 'MySQL', imagePath: '/skills/mysql.png', level: 88 },
+        { name: 'Oracle DB', imagePath: '/skills/oracle.png', level: 84 },
         { name: 'MongoDB', imagePath: '/skills/mongodb.png', level: 82 },
         { name: 'SQLite', imagePath: '/skills/sqlite.png', level: 85 },
         { name: 'Redis', imagePath: '/skills/redis.png', level: 75 },
@@ -137,6 +143,8 @@ export default function Skills() {
       skills: [
         { name: 'Git', imagePath: '/skills/git.png', level: 92 },
         { name: 'Github', imagePath: '/skills/github.png', level: 90 },
+        { name: 'Maven', imagePath: '/skills/apachemaven.png', level: 85 },
+        { name: 'Gradle', imagePath: '/skills/gradle.png', level: 82 },
         { name: 'Figma', imagePath: '/skills/figma.png', level: 85 },
         { name: 'ClickUp', imagePath: '/skills/clickup.png', level: 88 },
         { name: 'Canva', imagePath: '/skills/canva.png', level: 82 },
@@ -259,8 +267,8 @@ export default function Skills() {
 
         {/* Enhanced Category Tabs */}
         <div className={`flex justify-center mb-12 transition-all duration-1000 delay-800 ${inView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-          <div className="glass-effect rounded-xl p-3 border border-text-muted/20 backdrop-blur-lg">
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2">
+          <div className="glass-effect rounded-xl p-3 border border-text-muted/20 backdrop-blur-lg max-w-full overflow-x-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2 min-w-[300px]">
               {Object.entries(skillCategories).map(([key, category]) => {
                 const IconComponent = categoryIcons[key as keyof typeof categoryIcons]
                 const isActive = activeCategory === key
