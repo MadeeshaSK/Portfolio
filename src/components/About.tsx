@@ -184,15 +184,14 @@ export default function About() {
             <div className="space-y-6">
               <p className={`text-lg text-text-secondary leading-relaxed transition-all duration-1000 delay-600 ${inView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                 I'm <span className="text-primary-400 font-semibold">Madeesha Sachindu Karunarathna</span> from Moratuwa, Sri Lanka. A passionate
-                final year IT undergraduate at the <span className="text-secondary-400 font-semibold">University of Moratuwa</span> with over 3 years of
-                experience in real-world projects. My journey in tech has led me through 5+ completed
-                projects, developing a strong interest in <span className="gradient-text font-semibold">full-stack development</span> for web, mobile,
+                final year IT undergraduate at the <span className="text-secondary-400 font-semibold">University of Moratuwa</span> with over 1 year of
+                experience in real-world projects, contributing to <span className="text-accent-400 font-semibold">10+ industry & mentored projects</span> and over <span className="text-primary-400 font-semibold">4+ years of coding experience</span>. My journey in tech has led me through <span className="text-secondary-400 font-semibold">5+ completed personal & academic projects</span>, developing a strong interest in <span className="gradient-text font-semibold">full-stack development</span> for web, mobile,
                 and desktop applications, along with a deep passion for cybersecurity, networking,
                 DevOps, and AI.
               </p>
 
               <p className={`text-lg text-text-secondary leading-relaxed transition-all duration-1000 delay-800 ${inView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                I specialize in modern technologies including <span className="text-primary-400">React</span>, <span className="text-secondary-400">Next.js</span>, <span className="text-accent-400">Node.js</span>, <span className="text-primary-400 font-semibold">Spring Boot</span>, <span className="gradient-text font-semibold">Flutter</span> and <span className="text-secondary-400 font-semibold">AWS</span>.
+                I specialize in modern technologies including <span className="text-primary-400 font-semibold">React</span>, <span className="text-secondary-400 font-semibold">Next.js</span>, <span className="text-accent-400 font-semibold">Node.js</span>, <span className="text-primary-400 font-semibold">Spring Boot</span>, <span className="text-emerald-400 font-semibold">.NET</span>, <span className="gradient-text font-semibold">Flutter</span> and <span className="text-secondary-400 font-semibold">AWS</span>.
                 My approach is built on clean code principles, fast performance
                 optimization, effective teamwork, and strong time management skills. As a <span className="gradient-text font-semibold">fast
                   learner</span>, I'm constantly exploring new technologies and following industry trends

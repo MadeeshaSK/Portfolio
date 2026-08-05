@@ -150,8 +150,9 @@ export default function Footer() {
         {/* Enhanced Bottom Bar */}
         <div className={`border-t border-text-muted/20 mt-12 pt-8 transition-all duration-1000 delay-800 ${inView ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2 text-text-muted text-sm">
+            <div className="flex items-center gap-2 text-text-muted text-sm flex-wrap">
               <span>© {currentYear} MadeeshaSK. All rights reserved.</span>
+              <span className="px-2 py-0.5 text-xs rounded-full bg-primary-500/10 text-primary-400 border border-primary-500/20 font-mono font-medium">v1.1.0</span>
               <div className="w-1 h-1 bg-primary-400/60 rounded-full animate-pulse" />
             </div>
 

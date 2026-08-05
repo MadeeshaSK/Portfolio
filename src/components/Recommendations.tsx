@@ -21,7 +21,8 @@ export default function Recommendations() {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
-  const recommendations = [
+  const recommendations: any[] = [
+    /*
     {
       name: 'Kumuduni Rajapakshe',
       role: 'Manager Software Development',
@@ -44,6 +45,7 @@ export default function Recommendations() {
       linkedinUrl: 'https://www.linkedin.com/company/silc-general',
       gradient: 'from-secondary-500 via-accent-500 to-primary-500'
     }
+    */
   ]
 
   return (
@@ -81,8 +83,15 @@ export default function Recommendations() {
           </div>
 
           {/* Recommendations Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {recommendations.map((rec, index) => (
+          {recommendations.length === 0 ? (
+            <div className="card text-center p-8 border border-gray-800/80 bg-dark-900/60 max-w-lg mx-auto">
+              <UserCheck className="w-10 h-10 text-primary-400/60 mx-auto mb-3 animate-pulse" />
+              <h3 className="text-lg font-semibold text-text-primary mb-1">Recommendations</h3>
+              <p className="text-sm text-text-muted">Detailed recommendations will be published shortly.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {recommendations.map((rec, index) => (
               <div
                 key={rec.name}
                 className={`card group relative overflow-hidden transition-all duration-700 hover:scale-[1.02] flex flex-col justify-between ${
@@ -150,6 +159,7 @@ export default function Recommendations() {
               </div>
             ))}
           </div>
+          )}
         </div>
       </div>
     </section>
