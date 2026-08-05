@@ -101,7 +101,7 @@ export default function Footer() {
               <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary-400 to-transparent rounded-full" />
             </h4>
             <ul className="space-y-2">
-              {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item, index) => (
+              {['Home', 'About', 'Experience', 'Skills', 'Projects', 'Contact'].map((item, index) => (
                 <li key={item} className="animate-fade-in-up" style={{ animationDelay: `${300 + index * 100}ms` }}>
                   <a
                     href={`#${item.toLowerCase()}`}
