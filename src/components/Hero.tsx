@@ -13,10 +13,10 @@ export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isVisible, setIsVisible] = useState(false)
   const [imageError, setImageError] = useState(false)
-  
+
   const roles = [
     'Full Stack Developer',
-    'Mobile Application Developer', 
+    'Mobile Application Developer',
     'Desktop Application Developer',
     'Cybersecurity & Networking Enthusiast',
     'Tech Enthusiast'
@@ -27,7 +27,7 @@ export default function Hero() {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
     }
-    
+
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
@@ -41,13 +41,13 @@ export default function Hero() {
   // Enhanced typing animation
   useEffect(() => {
     let timeout: NodeJS.Timeout | undefined;
-    
+
     const typeSpeed = 120;
     const deleteSpeed = 80;
     const pauseBeforeDelete = 2000;
-    
+
     const currentWord = roles[currentRole];
-    
+
     if (isTyping && !isDeleting) {
       if (displayText.length < currentWord.length) {
         timeout = setTimeout(() => {
@@ -70,7 +70,7 @@ export default function Hero() {
         setCurrentRole((prev) => (prev + 1) % roles.length);
       }
     }
-    
+
     return () => clearTimeout(timeout);
   }, [displayText, isTyping, isDeleting, currentRole, roles]);
 
@@ -97,12 +97,12 @@ export default function Hero() {
       <TechRainBackground />
 
       {/* Animated Cursor Follower */}
-      <div 
+      <div
         className="fixed pointer-events-none z-50 w-6 h-6 bg-primary-400/30 rounded-full blur-sm transition-all duration-300 ease-out"
-        style={{ 
-          left: mousePosition.x - 12, 
+        style={{
+          left: mousePosition.x - 12,
           top: mousePosition.y - 12,
-          transform: `scale(${mousePosition.x > 0 ? 1 : 0})` 
+          transform: `scale(${mousePosition.x > 0 ? 1 : 0})`
         }}
       />
 
@@ -112,13 +112,13 @@ export default function Hero() {
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl animate-float-slow" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl animate-float-reverse" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-accent-500/10 rounded-full blur-2xl animate-float-fast" />
-        
+
         {/* Additional floating particles */}
         <div className="absolute top-20 right-20 w-4 h-4 bg-primary-400/40 rounded-full animate-ping" />
         <div className="absolute bottom-32 left-20 w-2 h-2 bg-secondary-400/60 rounded-full animate-pulse" />
         <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-accent-400/50 rounded-full animate-bounce" />
         <div className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-primary-300/70 rounded-full animate-ping delay-1000" />
-        
+
         {/* Floating tech icons */}
         <div className="absolute top-1/4 right-1/5 animate-float-icon opacity-20">
           <Code2 className="w-8 h-8 text-primary-400" />
@@ -132,7 +132,7 @@ export default function Hero() {
         <div className="max-w-7xl mx-auto">
           {/* Two Column Layout */}
           <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh] pt-24 lg:pt-32">
-            
+
             {/* Left Column - Content */}
             <div className={`text-center lg:text-left transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               {/* Main Heading with enhanced animations */}
@@ -144,7 +144,7 @@ export default function Hero() {
                     <span className="absolute -inset-1 bg-gradient-to-r from-primary-400/20 to-secondary-400/20 rounded-lg blur animate-pulse-glow" />
                   </span>
                 </h1>
-                
+
                 {/* Enhanced typing animation container */}
                 <div className={`text-xl sm:text-2xl lg:text-3xl text-gray-300 h-12 flex items-center justify-center lg:justify-start transition-all duration-1000 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                   <span className="typing-container relative">
@@ -156,7 +156,7 @@ export default function Hero() {
                     <span className="absolute inset-0 bg-gradient-to-r from-primary-400/10 to-secondary-400/10 rounded blur-sm animate-pulse" />
                   </span>
                 </div>
-                
+
                 <p className={`text-sm sm:text-base text-gray-400 mt-2 transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                   Final year undergraduate at University of Moratuwa, Sri Lanka.
                 </p>
@@ -173,7 +173,7 @@ export default function Hero() {
 
               {/* Enhanced CTA Buttons */}
               <div className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 transition-all duration-1000 delay-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                <button 
+                <button
                   onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
                   className="btn btn-primary group relative overflow-hidden hover:scale-105 transition-all duration-300"
                 >
@@ -182,9 +182,9 @@ export default function Hero() {
                   <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-secondary-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
                 </button>
-                
-                <a 
-                  href="/Madeesha-Karunarathna.pdf" 
+
+                <a
+                  href="/Madeesha-Karunarathna.pdf"
                   download
                   className="btn btn-secondary group relative overflow-hidden hover:scale-105 transition-all duration-300"
                 >
@@ -223,34 +223,43 @@ export default function Hero() {
 
             {/* Right Column - Profile Image */}
             <div className={`flex justify-center lg:justify-end transition-all duration-1000 delay-400 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-              <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] rounded-full bg-gradient-to-br from-primary-400 to-secondary-600 p-2 animate-pulse-glow relative">
-                <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold gradient-text relative overflow-hidden">
-                  {!imageError ? (
-                    <Image
-                      src="/image2.png"
-                      alt="Madeesha - Full Stack Developer"
-                      fill
-                      className="object-contain animate-slide-in-right rounded-full"
-                      priority
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                      sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, (max-width: 1280px) 384px, 448px"
-                    />
-                  ) : (
-                    // Enhanced fallback placeholder
-                    <div className="w-full h-full rounded-full bg-gradient-to-br from-primary-400/20 to-secondary-400/20 flex items-center justify-center relative">
-                      <div className="text-6xl font-bold text-primary-400 animate-pulse">M</div>
-                    </div>
-                  )}
-                  
-                  {/* Debug info - only in development */}
-                  {process.env.NODE_ENV === 'development' && (
-                    <div className="absolute top-2 left-2 text-xs bg-black/70 text-white p-1 rounded z-20">
-                      {imageError ? '❌ Img Error' : '✅ Img OK'}
-                    </div>
-                  )}
-                  
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-400/20 to-secondary-600/20 rounded-full animate-pulse" />
+              <div className="relative group/profile rounded-full cursor-pointer">
+                {/* Outer Glowing Light Beam Ring - Hover Only */}
+                <div className="absolute -inset-2 rounded-full bg-[conic-gradient(from_0deg,#38bdf8,#a855f7,#f43f5e,#38bdf8)] opacity-0 group-hover/profile:opacity-100 blur-xl transition-opacity duration-500 animate-[spin_4s_linear_infinite]" />
+
+                {/* Orbiting Border Beam around Profile Ring - Hover Only */}
+                <div className="absolute -inset-1 rounded-full bg-[conic-gradient(from_0deg,transparent_0deg,#38bdf8_120deg,#c084fc_240deg,transparent_360deg)] opacity-0 group-hover/profile:opacity-100 transition-opacity duration-500 animate-[spin_2s_linear_infinite]" />
+
+                {/* Main Circular Profile Card */}
+                <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] rounded-full bg-gradient-to-br from-primary-400 to-secondary-600 p-2 animate-pulse-glow relative overflow-hidden group-hover/profile:scale-[1.02] transition-transform duration-500">
+                  <div className="w-full h-full rounded-full flex items-center justify-center text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold gradient-text relative overflow-hidden">
+                    {!imageError ? (
+                      <Image
+                        src="/image.png"
+                        alt="Madeesha - Full Stack Developer"
+                        fill
+                        className="object-contain animate-slide-in-right rounded-full group-hover/profile:scale-105 transition-transform duration-500"
+                        priority
+                        onError={handleImageError}
+                        onLoad={handleImageLoad}
+                        sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, (max-width: 1280px) 384px, 448px"
+                      />
+                    ) : (
+                      // Enhanced fallback placeholder
+                      <div className="w-full h-full rounded-full bg-gradient-to-br from-primary-400/20 to-secondary-400/20 flex items-center justify-center relative">
+                        <div className="text-6xl font-bold text-primary-400 animate-pulse">M</div>
+                      </div>
+                    )}
+
+                    {/* Debug info - only in development */}
+                    {process.env.NODE_ENV === 'development' && (
+                      <div className="absolute top-2 left-2 text-xs bg-black/70 text-white p-1 rounded z-20">
+                        {imageError ? '❌ Img Error' : '✅ Img OK'}
+                      </div>
+                    )}
+
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-400/20 to-secondary-600/20 rounded-full animate-pulse pointer-events-none" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -259,7 +268,7 @@ export default function Hero() {
 
           {/* Enhanced Scroll Indicator */}
           <div className={`flex justify-center mt-8 lg:mt-16 transition-all duration-1000 delay-1400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-            <button 
+            <button
               onClick={handleScrollDown}
               className="animate-bounce-slow cursor-pointer p-4 rounded-full hover:bg-gray-800/50 transition-all duration-300 backdrop-blur-sm hover:scale-110 relative group"
               aria-label="Scroll down"
