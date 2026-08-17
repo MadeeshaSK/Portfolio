@@ -23,7 +23,9 @@ export default function Recommendations() {
 
   const recommendations: any[] = [
     {
-      name: 'Kumuduni Rajapakshe',
+      name: 'Ms. Kumuduni Rajapakshe',
+      profileUrl: 'https://www.linkedin.com/in/kumuduni/',
+      companyUrl: 'https://www.linkedin.com/company/silc-general/posts/?feedView=all',
       role: 'Manager Software Development',
       company: 'Sri Lanka Insurance Corporation General Ltd.',
       period: '2026',
@@ -96,16 +98,18 @@ export default function Recommendations() {
                       {/* Header: Name, Position, Period */}
                       <div className="flex items-start justify-between gap-4 mb-4 border-b border-gray-800/80 pb-4">
                         <div>
-                          <h3 className="text-xl font-bold text-text-primary group-hover:text-primary-400 transition-colors duration-300">
-                            {rec.name}
-                          </h3>
+                          <a href={rec.profileUrl} target="_blank" rel="noopener noreferrer">
+                            <h3 className="text-xl font-bold text-text-primary group-hover:text-primary-400 transition-colors duration-300">
+                              {rec.name}
+                            </h3>
+                          </a>
                           <p className="text-sm text-secondary-400 font-semibold mt-0.5">
                             {rec.role}
                           </p>
-                          <div className="flex items-center gap-1.5 text-xs text-gray-400 font-medium mt-1.5">
+                          <a href={rec.companyUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-primary-400 transition-colors duration-300 font-medium mt-1.5">
                             <Building2 className="w-3.5 h-3.5 text-secondary-400 shrink-0" />
                             <span>{rec.company}</span>
-                          </div>
+                          </a>
                         </div>
 
                         {/* Date Badge */}
