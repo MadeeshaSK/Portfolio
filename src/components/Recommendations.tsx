@@ -22,7 +22,6 @@ export default function Recommendations() {
   }, [])
 
   const recommendations: any[] = [
-    /*
     {
       name: 'Kumuduni Rajapakshe',
       role: 'Manager Software Development',
@@ -30,22 +29,10 @@ export default function Recommendations() {
       period: '2026',
       relationship: 'Supervised during internship period',
       quote:
-        'Demonstrated strong software engineering practices, technical adaptability, and proactive problem-solving throughout the enterprise system development projects.',
-      linkedinUrl: 'https://www.linkedin.com/company/silc-general',
+        'I had the pleasure of mentoring and managing Madeesha Karunarathne during his time as an Intern Software Engineer in our SLIC ICT Software Development team. From day one, Madeesha stood out for his remarkable ability to learn quickly and adapt to complex software systems and technical frameworks. Throughout his internship, he consistently demonstrated strong analytical skills, a solid technical foundation, a great understanding of the insurance domain, and a high level of professionalism. Madeesha took full responsibility for assigned tasks, delivered clean and reliable code, and approached new technical challenges with great enthusiasm. He has built an excellent foundation for a successful career in software engineering, and I am confident he will be a valuable asset to any technical team. I highly recommend him!',
+      linkedinUrl: 'https://www.linkedin.com/in/madeesha-karunarathna/details/recommendations/',
       gradient: 'from-primary-500 via-secondary-500 to-accent-500'
-    },
-    {
-      name: 'Mekhala Sewwandi',
-      role: 'Software Engineer',
-      company: 'Sri Lanka Insurance Corporation General Ltd.',
-      period: '2026',
-      relationship: 'Worked together during internship period',
-      quote:
-        'A dedicated team player with high technical capabilities in full-stack development, delivering clean code and collaborating effectively across complex project features.',
-      linkedinUrl: 'https://www.linkedin.com/company/silc-general',
-      gradient: 'from-secondary-500 via-accent-500 to-primary-500'
     }
-    */
   ]
 
   return (
@@ -90,75 +77,74 @@ export default function Recommendations() {
               <p className="text-sm text-text-muted">Detailed recommendations will be published shortly.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className={recommendations.length === 1 ? "grid grid-cols-1 max-w-3xl mx-auto" : "grid grid-cols-1 md:grid-cols-2 gap-8"}>
               {recommendations.map((rec, index) => (
-              <div
-                key={rec.name}
-                className={`card group relative overflow-hidden transition-all duration-700 hover:scale-[1.02] flex flex-col justify-between ${
-                  inView ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
-                }`}
-                style={{ transitionDelay: `${400 + index * 200}ms` }}
-              >
-                {/* Top Accent Gradient Line */}
-                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${rec.gradient}`} />
-                
-                {/* Background Hover Glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-secondary-500/5 to-accent-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div
+                  key={rec.name}
+                  className={`card group relative overflow-hidden transition-all duration-700 hover:scale-[1.02] flex flex-col justify-between ${inView ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+                    }`}
+                  style={{ transitionDelay: `${400 + index * 200}ms` }}
+                >
+                  {/* Top Accent Gradient Line */}
+                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${rec.gradient}`} />
 
-                <div className="relative z-10 p-4 sm:p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    {/* Header: Name, Position, Period */}
-                    <div className="flex items-start justify-between gap-4 mb-4 border-b border-gray-800/80 pb-4">
-                      <div>
-                        <h3 className="text-xl font-bold text-text-primary group-hover:text-primary-400 transition-colors duration-300">
-                          {rec.name}
-                        </h3>
-                        <p className="text-sm text-secondary-400 font-semibold mt-0.5">
-                          {rec.role}
-                        </p>
-                        <div className="flex items-center gap-1.5 text-xs text-gray-400 font-medium mt-1.5">
-                          <Building2 className="w-3.5 h-3.5 text-secondary-400 shrink-0" />
-                          <span>{rec.company}</span>
+                  {/* Background Hover Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-secondary-500/5 to-accent-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                  <div className="relative z-10 p-4 sm:p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                      {/* Header: Name, Position, Period */}
+                      <div className="flex items-start justify-between gap-4 mb-4 border-b border-gray-800/80 pb-4">
+                        <div>
+                          <h3 className="text-xl font-bold text-text-primary group-hover:text-primary-400 transition-colors duration-300">
+                            {rec.name}
+                          </h3>
+                          <p className="text-sm text-secondary-400 font-semibold mt-0.5">
+                            {rec.role}
+                          </p>
+                          <div className="flex items-center gap-1.5 text-xs text-gray-400 font-medium mt-1.5">
+                            <Building2 className="w-3.5 h-3.5 text-secondary-400 shrink-0" />
+                            <span>{rec.company}</span>
+                          </div>
+                        </div>
+
+                        {/* Date Badge */}
+                        <div className="flex items-center gap-1.5 bg-dark-800/80 px-3 py-1 rounded-full border border-gray-700/50 text-xs text-gray-300 shrink-0">
+                          <Calendar className="w-3.5 h-3.5 text-primary-400" />
+                          <span>{rec.period}</span>
                         </div>
                       </div>
 
-                      {/* Date Badge */}
-                      <div className="flex items-center gap-1.5 bg-dark-800/80 px-3 py-1 rounded-full border border-gray-700/50 text-xs text-gray-300 shrink-0">
-                        <Calendar className="w-3.5 h-3.5 text-primary-400" />
-                        <span>{rec.period}</span>
+                      {/* Temporary Recommendation Quote Body */}
+                      <div className="relative my-3 pl-3 border-l-2 border-primary-500/40 text-gray-300 text-sm leading-relaxed italic">
+                        <Quote className="w-5 h-5 text-primary-400/20 absolute -top-2 -left-2.5 rotate-180 pointer-events-none" />
+                        &ldquo;{rec.quote}&rdquo;
                       </div>
                     </div>
 
-                    {/* Temporary Recommendation Quote Body */}
-                    <div className="relative my-3 pl-3 border-l-2 border-primary-500/40 text-gray-300 text-sm leading-relaxed italic">
-                      <Quote className="w-5 h-5 text-primary-400/20 absolute -top-2 -left-2.5 rotate-180 pointer-events-none" />
-                      &ldquo;{rec.quote}&rdquo;
-                    </div>
-                  </div>
+                    {/* Bottom Line: Relationship & Verify Link */}
+                    <div className="pt-3 border-t border-gray-800/80 mt-2 flex items-center justify-between gap-2 text-xs sm:text-sm">
+                      <div className="flex items-center gap-1.5 text-gray-300 font-medium">
+                        <UserCheck className="w-4 h-4 text-primary-400 shrink-0" />
+                        <span>{rec.relationship}</span>
+                      </div>
 
-                  {/* Bottom Line: Relationship & Verify Link */}
-                  <div className="pt-3 border-t border-gray-800/80 mt-2 flex items-center justify-between gap-2 text-xs sm:text-sm">
-                    <div className="flex items-center gap-1.5 text-gray-300 font-medium">
-                      <UserCheck className="w-4 h-4 text-primary-400 shrink-0" />
-                      <span>{rec.relationship}</span>
+                      <a
+                        href={rec.linkedinUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600/10 text-blue-400 hover:bg-blue-600/20 hover:text-blue-300 border border-blue-500/20 transition-all duration-300 shrink-0 font-medium text-xs"
+                        title="Verify on LinkedIn"
+                      >
+                        <Linkedin className="w-3.5 h-3.5" />
+                        <span>Verify</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
                     </div>
-
-                    <a
-                      href={rec.linkedinUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600/10 text-blue-400 hover:bg-blue-600/20 hover:text-blue-300 border border-blue-500/20 transition-all duration-300 shrink-0 font-medium text-xs"
-                      title="Verify on LinkedIn"
-                    >
-                      <Linkedin className="w-3.5 h-3.5" />
-                      <span>Verify</span>
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
           )}
         </div>
       </div>
